@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ดนย บุญทัศนกุล — At The End You Must Wake Up</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600&family=Sarabun:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a2723; --soft:#6b655c; --faint:#9a9388;
+    --paper:#f6f2ea; --paper2:#efe9df; --line:#ddd5c7;
+    --accent:#8a6d3b;
+    --serif:'Noto Serif Thai','Cormorant Garamond',serif;
+    --sans:'Sarabun',-apple-system,'Helvetica Neue',sans-serif;
+    --display:'Cormorant Garamond',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:300; line-height:1.85;
+    -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+  }
+  img{display:block; max-width:100%; height:auto}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 32px}
+
+  /* ---------- COVER ---------- */
+  .cover{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:60px 32px; position:relative}
+  .cover .kicker{font-family:var(--display); font-style:italic; font-size:1.1rem; color:var(--soft);
+    letter-spacing:.18em; text-transform:uppercase; margin-bottom:26px}
+  .cover figure{max-width:760px; width:100%; box-shadow:0 24px 60px -28px rgba(40,34,26,.55); margin-bottom:38px}
+  .cover h1{font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,6vw,4.6rem);
+    line-height:1.04; letter-spacing:.005em}
+  .cover h1 em{font-style:italic; display:block; color:var(--accent)}
+  .cover .artist{font-family:var(--serif); font-weight:400; font-size:1.25rem; margin-top:22px; letter-spacing:.04em}
+  .cover .sub{font-size:.95rem; color:var(--soft); margin-top:8px; letter-spacing:.05em}
+  .scroll-cue{position:absolute; bottom:26px; font-size:.78rem; color:var(--faint); letter-spacing:.25em; text-transform:uppercase}
+
+  /* ---------- STATEMENT ---------- */
+  section{padding:96px 0}
+  .statement{background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .statement .lead{font-family:var(--serif); font-weight:300; font-size:1.5rem; line-height:1.9; max-width:760px}
+  .statement p{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:720px; margin-top:1.4em; color:#3a352e}
+  .label{font-family:var(--display); font-style:italic; font-size:1rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:30px}
+
+  /* ---------- ACT DIVIDER ---------- */
+  .act{text-align:center; padding:120px 0 80px}
+  .act .num{font-family:var(--display); font-size:2.4rem; font-style:italic; color:var(--faint); letter-spacing:.1em}
+  .act .en{font-family:var(--display); font-size:.95rem; letter-spacing:.35em; text-transform:uppercase; color:var(--soft); margin:14px 0 6px}
+  .act h2{font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,4vw,2.5rem); letter-spacing:.02em}
+  .act .concept{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:680px;
+    margin:34px auto 0; color:#3a352e; text-align:left}
+  .rule{width:54px; height:1px; background:var(--accent); margin:34px auto 0}
+
+  /* ---------- PLATES ---------- */
+  .plate{padding:56px 0}
+  .plate figure{margin:0 auto; max-width:880px}
+  .plate.small figure{max-width:560px}
+  .plate img{margin:0 auto; box-shadow:0 18px 44px -26px rgba(40,34,26,.5)}
+  figcaption{margin-top:20px; text-align:center; font-size:.92rem; color:var(--soft); line-height:1.7}
+  figcaption .t{font-family:var(--display); font-style:italic; font-size:1.25rem; color:var(--ink); letter-spacing:.01em}
+  figcaption .m{display:block; margin-top:4px; font-size:.86rem; color:var(--faint); letter-spacing:.02em}
+  figcaption .note{display:block; margin-top:10px; font-family:var(--serif); font-size:.98rem; color:var(--soft); max-width:560px; margin-left:auto; margin-right:auto}
+
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; max-width:980px; margin:0 auto}
+  .pair figure{max-width:none}
+
+  /* ---------- CV ---------- */
+  .cv{background:var(--ink); color:#e9e2d4}
+  .cv .label{color:#caa86a}
+  .cv h2{font-family:var(--display); font-weight:500; font-size:2.2rem; margin-bottom:10px}
+  .cv .grid{display:grid; grid-template-columns:1fr 1fr; gap:48px 64px; margin-top:48px}
+  .cv h3{font-family:var(--display); font-style:italic; font-size:1.15rem; letter-spacing:.08em; color:#caa86a;
+    margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,.12)}
+  .cv ul{list-style:none}
+  .cv li{font-size:.95rem; font-weight:300; line-height:1.55; margin-bottom:13px; color:#d8d0c1}
+  .cv li b{color:#fff; font-weight:500}
+  .cv li span{color:#8f897d}
+  .cv .yr{color:#caa86a; font-weight:400; margin-right:8px}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center; background:var(--paper2); border-top:1px solid var(--line)}
+  .contact h2{font-family:var(--display); font-style:italic; font-size:2rem; margin-bottom:24px}
+  .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line)}
+  .contact .who{font-family:var(--serif); font-size:1.15rem; margin-bottom:8px}
+  .contact .meta{font-size:.95rem; color:var(--soft); line-height:2}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:720px){
+    .wrap{padding:0 22px}
+    section{padding:64px 0}
+    .pair{grid-template-columns:1fr; gap:40px}
+    .cv .grid{grid-template-columns:1fr; gap:36px}
+    .statement .lead{font-size:1.3rem}
+  }
+
+  /* ---------- PRINT (Save as PDF) ---------- */
+  @media print{
+    body{background:#fff}
+    .scroll-cue{display:none}
+    section,.act,.plate{padding:24px 0; page-break-inside:avoid}
+    .cover{min-height:auto; page-break-after:always}
+    .plate img,.cover figure{box-shadow:none}
+    .cv{background:#fff; color:#000}
+    .cv li,.cv li b,.cv h3{color:#000}
+    .statement,.contact{background:#fff}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<header class="cover">
+  <div class="kicker">นิทรรศการเดี่ยว · ชุดผลงาน</div>
+  <figure><img src="images/01-at-the-end.jpg" alt="At The End You Must Wake Up"></figure>
+  <h1>At The End<br><em>You Must Wake Up</em></h1>
+  <div class="artist">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
+  <div class="sub">จิตรกรรมสีน้ำ หมึก และลายเส้นบนกระดาษ</div>
+  <div class="scroll-cue">เลื่อนลง</div>
+</header>
+
+<!-- ===== STATEMENT ===== -->
+<section class="statement">
+  <div class="wrap">
+    <div class="label">Artist Statement · แนวคิดศิลปิน</div>
+    <p class="lead">ดนย บุญทัศนกุล ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง</p>
+    <p>เขาผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</p>
+    <p>เขาเรียนจิตรกรรมที่มหาวิทยาลัยเชียงใหม่ (ศิลปมหาบัณฑิต) และเคยศึกษาที่ L'Accademia di Belle Arti di Firenze ประเทศอิตาลี ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี งานของเขาวนเวียนอยู่กับความใกล้ชิด การพลัดพราก และโอกาสที่หมุนกลับมาใหม่ได้เสมอ—เหมือนนาฬิกาทรายที่เพียงรอวันถูกพลิก</p>
+    <p>นอกจากเป็นจิตรกร เขายังเป็นนักแสดงละครเวทีและนักร้องประสานเสียงที่ได้รับรางวัลระดับนานาชาติ ประสบการณ์บนเวทีและในเสียงเพลงไหลกลับเข้ามาในงานวาด ในรูปของจังหวะ การฟัง และการมองอย่างช้า ๆ</p>
+  </div>
+</section>
+
+<!-- ===== ACT I ===== -->
+<div class="act wrap">
+  <div class="num">I</div>
+  <div class="en">Falling Asleep</div>
+  <h2>เคลิ้มหลับ</h2>
+  <p class="concept">นิทรรศการนี้ขอชวนผู้ชมเดินผ่านความฝันหนึ่งคืน เริ่มจากภาพของสุนัขจิ้งจอกที่ขดตัวหลับกลางทุ่ง—ภาพแทนของจิตใจที่กำลังพักผ่อนเพื่อจะหายดี ก้อนเมฆแปลงร่างเป็นสัตว์ ปราสาทเล็ก ๆ ตั้งอยู่บนหลังของมัน ทุกอย่างค่อย ๆ จมลงสู่ห้วงฝัน</p>
+  <div class="rule"></div>
+</div>
+
+<!-- ===== ACT II : THE DREAM ===== -->
+<div class="act wrap">
+  <div class="num">II</div>
+  <div class="en">The Dream</div>
+  <h2>ในความฝัน</h2>
+  <p class="concept"><i>At The End You Must Wake Up</i> คือบันทึกของเรื่องที่เกิดขึ้นแล้วผ่านไป แต่ส่วนลึกของใจยังไม่ยอมปล่อยความรู้สึกที่อยู่นอกเหนือการควบคุม การวาดชุดนี้จึงเป็นการบำบัดตัวเอง—กล่อมใจให้หลับอยู่ในฝัน จนถึงวันหนึ่งที่ใจถูกชำระจนใส และพร้อมจะลืมตาตื่นขึ้นอีกครั้ง</p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/02-house-of-dream.jpg" alt="House of Dream">
+  <figcaption><span class="t">House of Dream</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">หอยทากแบกถ้วยชาที่ภายในมีบ้านเล็ก ๆ บนเนินเขา และดอกไม้สีชมพูดอกโต—บ้านในฝันที่เคลื่อนที่ไปกับเรา</span></figcaption>
+</figure></div></div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/03-just-two-of-us.jpg" alt="Just Two of Us">
+  <figcaption><span class="t">Just Two of Us</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">บ้านหินสไตล์ทัสคานีที่มีนาฬิกาทรายประดับบนหอคอย ใต้ท้องฟ้าที่หมุนวน—ความทรงจำจากอิตาลีกับจังหวะของเวลา</span></figcaption>
+</figure></div></div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/04-our-song.jpg" alt="Our Song">
+  <figcaption><span class="t">Our Song</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">สุนัขจิ้งจอกหวนกลับมาอีกครั้ง คราวนี้ห้อมล้อมด้วยโน้ตเพลง ปลา และดวงจันทร์—เสียงเพลงที่โอบกอดความฝันไว้</span></figcaption>
+</figure></div></div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/05-song-of-sun-and-moon.jpg" alt="Song of Sun and Moon">
+  <figcaption><span class="t">Song of Sun and Moon</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">ใบหน้าของพระอาทิตย์และพระจันทร์หลอมรวมเป็นหนึ่งเดียว ท่ามกลางดอกไม้และสรรพสัตว์ในฝัน</span></figcaption>
+</figure></div></div>
+
+<!-- ===== ACT III : THE MECHANISM ===== -->
+<div class="act wrap">
+  <div class="num">III</div>
+  <div class="en">The Mechanism</div>
+  <h2>กลไกของนาฬิกาทราย</h2>
+  <p class="concept">โอกาสผ่านมาแล้วผ่านไป หลายเรื่องเริ่มต้นและจบลงอย่างไม่มีเยื่อใย เหมือนความฝันที่เราไม่อยากลืมตาตื่น นาฬิกาทรายมีความหมายมากกว่าเครื่องนับเวลาถอยหลัง เมื่อทรายหมด มันเพียงนิ่งรอวันถูกพลิกกลับ เพื่อเริ่มต้นใหม่อย่างไม่รู้จบ—เช่นเดียวกับความรัก ความสัมพันธ์ ชีวิต และโอกาส งานหมึกในองก์นี้คือ "ภายใน" ของนาฬิกาเรือนนั้น: เส้นที่ถักทอกันแน่นจนเวลากลายเป็นเขาวงกต</p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/06-love-and-peace.jpg" alt="Love and Peace">
+  <figcaption><span class="t">Love and Peace</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">นกพิราบขาวที่ก่อตัวขึ้นจาก "ที่ว่าง" กลางสนามหมึกอันหนาแน่น—ความสงบที่โผล่พ้นจากความวุ่นวาย</span></figcaption>
+</figure></div></div>
+
+<div class="pair">
+  <figure>
+    <img src="images/08-sun-and-moon.jpg" alt="Sun and Moon">
+    <figcaption><span class="t">Sun and Moon</span><span class="m">2565 · หมึกบนกระดาษ · 28 × 21 ซม.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="images/07-we-meet-in-the-sky.jpg" alt="We Meet in the Sky">
+    <figcaption><span class="t">We Meet in the Sky</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span></figcaption>
+  </figure>
+</div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/09-missing-you.jpg" alt="Missing You">
+  <figcaption><span class="t">Missing You</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 28 × 42 ซม.</span>
+  <span class="note">งานหมึกแน่นเต็มผืน พลังงานสูง สีสันปะทุ—ลายเซ็นของชุด New Chapter ที่ความคิดถึงกลายเป็นเขาวงกต</span></figcaption>
+</figure></div></div>
+
+<!-- ===== ACT IV : THE TRUE HOME ===== -->
+<div class="act wrap">
+  <div class="num">IV</div>
+  <div class="en">The True Home</div>
+  <h2>บ้านที่แท้จริง</h2>
+  <p class="concept">OSHO ว่าไว้ว่า ปัญญาญาณเปรียบเหมือนสะพานที่เชื่อมทางให้เราเดินกลับสู่บ้านที่แท้จริง—บ้านที่มีอยู่มาตลอด ตั้งอยู่ตรงนั้นก่อนเราเกิดและหลังเราตาย เราไม่ใช่เจ้าของบ้าน เราเป็นส่วนหนึ่งของมัน สะพานที่พาไปสู่บ้านนั้นซ่อนอยู่ทั่วทุกหนแห่ง—ในแววตาของสุนัขใต้แดด ในควันบาง ๆ จากถ้วยกาแฟ หรือแม้แต่ในภาพวาดสักภาพ ลายเส้นหมึกบนกระดาษชุดนี้ คือสิ่งที่ศิลปินค้นพบแล้วนำกลับมาเล่า</p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/10-stone-bridge.jpg" alt="สะพานหิน / I Am Home">
+  <figcaption><span class="t">I Am Home — Bridge</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span>
+  <span class="note">ซุ้มสะพานหินใต้ท้องฟ้าที่ไหวเอน—ภาพแทนของ "สะพานสู่บ้านที่แท้จริง"</span></figcaption>
+</figure></div></div>
+
+<div class="pair">
+  <figure>
+    <img src="images/11-moka-moon.jpg" alt="I Am Home — moka pot">
+    <figcaption><span class="t">I Am Home — Moka</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span></figcaption>
+  </figure>
+  <figure>
+    <img src="images/12-teapot.jpg" alt="I Am Home — teapot">
+    <figcaption><span class="t">I Am Home — Teapot</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span></figcaption>
+  </figure>
+</div>
+
+<div class="plate small"><div class="wrap"><figure>
+  <img src="images/13-couple-husky.jpg" alt="Couple">
+  <figcaption><span class="t">Couple</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">ภาพเหมือนสุนัขด้วยเส้นหมึกละเอียด ห้อมล้อมด้วยลายพรรณพฤกษาและสัญลักษณ์</span></figcaption>
+</figure></div></div>
+
+<!-- ===== ACT V : WAKING ===== -->
+<div class="act wrap">
+  <div class="num">V</div>
+  <div class="en">Waking</div>
+  <h2>ลืมตาตื่น</h2>
+  <p class="concept">เมื่อใจถูกชำระจนใส ภาพก็เปลี่ยนน้ำหนัก—จากหมึกหนาในความฝัน สู่สีน้ำที่โปร่งและมีแสง ภูมิทัศน์เหล่านี้บางส่วนคือความทรงจำจากอิตาลี บางส่วนคือหมู่บ้านชาวประมงและท้องทุ่งใกล้บ้าน—โลกที่รอเราอยู่เมื่อเราลืมตาตื่น</p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/14-toscana.jpg" alt="Toscana">
+  <figcaption><span class="t">Toscana</span><span class="m">สีน้ำบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">เนินเขาแห่งทัสคานี—ความสดของสีน้ำที่ผูกเรื่องราวการศึกษาที่ฟลอเรนซ์เข้าไว้</span></figcaption>
+</figure></div></div>
+
+<div class="plate"><div class="wrap"><figure>
+  <img src="images/15-sunset.jpg" alt="Sunset">
+  <figcaption><span class="t">Sunset</span><span class="m">สีน้ำบนกระดาษ · 21 × 28 ซม.</span>
+  <span class="note">เรือประมงยามอาทิตย์อัสดง ด้วยทีแปรงแบบ Post-Impressionist—ปิดเรื่องราวด้วยแสงและความหวัง</span></figcaption>
+</figure></div></div>
+
+<!-- ===== CV ===== -->
+<section class="cv">
+  <div class="wrap">
+    <div class="label">Curriculum Vitae</div>
+    <h2>Danaya Buntasnakul</h2>
+    <div style="color:#9c958a;font-size:.95rem;">ดนย บุญทัศนกุล · เกิด 1 กันยายน 2522 · ทำงานที่กรุงเทพฯ · จิตรกร · นักวาดภาพประกอบ · นักแสดง</div>
+    <div class="grid">
+      <div>
+        <h3>Education</h3>
+        <ul>
+          <li><span class="yr">2555</span><b>ศิลปมหาบัณฑิต (จิตรกรรม)</b> — มหาวิทยาลัยเชียงใหม่</li>
+          <li><span class="yr">2546</span>ทุนระยะสั้น — L'Accademia di Belle Arti di Firenze, อิตาลี</li>
+          <li><span class="yr">2544</span><b>ศิลปบัณฑิต (จิตรกรรม)</b> — มหาวิทยาลัยศรีนครินทรวิโรฒ</li>
+        </ul>
+        <h3 style="margin-top:36px">Teaching</h3>
+        <ul>
+          <li><span class="yr">2564–66</span>อาจารย์พิเศษ วิทยาลัยการออกแบบ ม.รังสิต</li>
+          <li><span class="yr">2549–54</span>อาจารย์ประจำ คณะศิลปกรรมศาสตร์ ม.ธุรกิจบัณฑิตย์</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Solo Exhibitions</h3>
+        <ul>
+          <li><span class="yr">2565</span><b>At The End You Must Wake Up</b> — Foxes International, Sky Bar &amp; Lounge, หัวหิน</li>
+          <li><span class="yr">2565</span><b>I Am Home</b> — บ้านศิลปิน, หัวหิน</li>
+          <li><span class="yr">2553</span>ไม่มีชื่อลำดับที่หนึ่ง — แจ่งเมือง Gallery, เชียงใหม่</li>
+          <li><span class="yr">2552</span>Missing Link — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</li>
+          <li><span class="yr">2551</span>ในนามของความรัก — หอศิลป์บ้านศิลปิน, หัวหิน</li>
+          <li><span class="yr">2551</span>ระหว่างเรา — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</li>
+          <li><span class="yr">2550</span>ไม่มีชื่อลำดับที่ศูนย์ — โรงแรมอมารี วอเตอร์เกท, กรุงเทพฯ</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact">
+  <div class="wrap">
+    <h2>ติดต่อศิลปิน</h2>
+    <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
+    <div class="meta">
+      <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
+      <a href="mailto:artproducktion@gmail.com">artproducktion@gmail.com</a><br>
+      กรุงเทพมหานคร ประเทศไทย
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

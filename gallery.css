@@ -1,0 +1,182 @@
+/* =========================================================
+   Dan's Originals — Gallery stylesheet (white-cube / contemporary)
+   ใช้ร่วมกัน: shop.html + series-*.html
+   ========================================================= */
+:root{
+  --paper:#ffffff; --paper2:#fafafa; --paper3:#f4f4f3;
+  --ink:#1a1a1a; --soft:#5f5f5f; --faint:#9b9b9b; --line:#e7e7e5;
+  --accent:#1a1a1a;
+  --sans:'Noto Sans Thai','Archivo',-apple-system,'Helvetica Neue',sans-serif;
+  --display:'Archivo','Noto Sans Thai',sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-weight:400; line-height:1.8;
+  -webkit-font-smoothing:antialiased; letter-spacing:0;
+}
+img{display:block; max-width:100%; height:auto}
+a{color:var(--accent)}
+.wrap{max-width:1120px; margin:0 auto; padding:0 40px}
+
+/* ---------- HEADER ---------- */
+.head{text-align:center; padding:104px 40px 56px; border-bottom:1px solid var(--line)}
+.head .kicker{font-family:var(--display); font-weight:500; font-size:.74rem; color:var(--soft);
+  letter-spacing:.28em; text-transform:uppercase; margin-bottom:30px}
+.head h1{font-family:var(--display); font-weight:500; font-size:clamp(2.3rem,6vw,4.2rem);
+  line-height:1.05; letter-spacing:-.015em}
+.head h1 em{font-style:normal; color:var(--ink)}
+.head .series-line{font-family:var(--display); font-weight:400; font-size:.78rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--soft); margin-top:24px}
+.head .sub{font-size:1rem; font-weight:300; color:var(--soft); margin-top:20px; max-width:600px; margin-left:auto; margin-right:auto; line-height:1.75}
+.back{display:inline-block; margin-top:32px; font-family:var(--display); font-weight:400; font-size:.74rem;
+  letter-spacing:.16em; text-transform:uppercase; color:var(--soft); border:1px solid var(--line);
+  padding:11px 24px; text-decoration:none; transition:border-color .2s,color .2s}
+.back:hover{border-color:var(--ink); color:var(--ink)}
+
+/* ---------- NOTICE ---------- */
+.notice{background:var(--paper2); border-bottom:1px solid var(--line); padding:24px 0}
+.notice .wrap{display:flex; flex-wrap:wrap; gap:10px 48px; justify-content:center;
+  font-size:.82rem; font-weight:300; color:var(--soft); text-align:center; letter-spacing:.01em}
+.notice b{color:var(--ink); font-weight:500}
+
+/* ---------- COLLECTIONS (hub) ---------- */
+.collections{padding:96px 0}
+.sec-label{font-family:var(--display); font-weight:500; font-size:.74rem; letter-spacing:.28em;
+  text-transform:uppercase; color:var(--soft); text-align:center; margin-bottom:64px}
+.cgrid{display:grid; grid-template-columns:1fr 1fr; gap:56px}
+
+.series-card{display:flex; flex-direction:column; text-decoration:none; color:inherit; transition:transform .4s ease}
+.series-card:hover{transform:translateY(-4px)}
+.series-card .cover{aspect-ratio:4/3; overflow:hidden; background:var(--paper3); border:1px solid var(--line);
+  display:flex; align-items:center; justify-content:center; padding:18px}
+.series-card .cover img{max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; transition:transform .7s ease}
+.series-card:hover .cover img{transform:scale(1.04)}
+.series-card .body{padding:26px 4px 0}
+.series-card .cap{font-family:var(--display); font-weight:500; font-size:.7rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--faint); margin-bottom:14px}
+.series-card h2{font-family:var(--display); font-weight:500; font-size:1.6rem; line-height:1.15; letter-spacing:-.01em}
+.series-card .meta{font-family:var(--display); font-weight:400; font-size:.74rem; letter-spacing:.12em;
+  text-transform:uppercase; color:var(--faint); margin-top:14px}
+.series-card .desc{font-size:.96rem; font-weight:300; color:var(--soft); line-height:1.75; margin-top:16px; max-width:440px}
+.series-card .enter{display:inline-block; margin-top:22px; font-family:var(--display); font-weight:500;
+  font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink);
+  border-bottom:1px solid var(--ink); padding-bottom:3px}
+
+/* coming soon */
+.series-card.soon{cursor:default}
+.series-card.soon:hover{transform:none}
+.series-card.soon .cover{display:flex; align-items:center; justify-content:center; border-style:dashed}
+.series-card.soon .cover span{font-family:var(--display); font-weight:400; font-size:1rem;
+  letter-spacing:.22em; text-transform:uppercase; color:var(--faint)}
+.series-card.soon h2,.series-card.soon .cap{color:var(--faint)}
+
+/* ---------- SHOP GRID (series page) ---------- */
+.shop{padding:88px 0}
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:64px 44px}
+.card{display:flex; flex-direction:column}
+.card .frame{position:relative; overflow:hidden; background:var(--paper3); border:1px solid var(--line);
+  aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:22px}
+.card .frame img{max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; transition:transform .6s ease}
+.card:hover .frame img{transform:scale(1.03)}
+.card .sold-tag{position:absolute; top:0; left:0; background:var(--ink); color:#fff;
+  font-family:var(--display); font-weight:500; font-size:.66rem; letter-spacing:.16em;
+  text-transform:uppercase; padding:6px 13px}
+.card h3{font-family:var(--display); font-weight:500; font-size:1.12rem; margin-top:22px; line-height:1.25; letter-spacing:-.005em}
+.card .meta{font-family:var(--display); font-weight:400; font-size:.7rem; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--faint); margin-top:9px}
+.card .price{font-size:1rem; font-weight:400; color:var(--ink); margin-top:12px; letter-spacing:.01em}
+.card .buy{margin-top:18px; align-self:flex-start; font-family:var(--display); font-weight:500; font-size:.74rem;
+  letter-spacing:.12em; text-transform:uppercase; background:var(--ink); color:#fff;
+  border:1px solid var(--ink); padding:11px 22px; cursor:pointer; transition:background .2s,color .2s}
+.card .buy:hover{background:#fff; color:var(--ink)}
+.card.sold{opacity:.5}
+.card.sold .buy{background:var(--faint); border-color:var(--faint); color:#fff; cursor:not-allowed}
+.card.sold .buy:hover{background:var(--faint); color:#fff}
+
+/* ---------- ORDER FORM ---------- */
+.order{background:var(--paper2); border-top:1px solid var(--line); padding:104px 0}
+.order h2{font-family:var(--display); font-weight:500; font-size:2rem; text-align:center; margin-bottom:14px; letter-spacing:-.01em}
+.order .lead{text-align:center; color:var(--soft); font-size:.96rem; font-weight:300; max-width:540px; margin:0 auto 52px; line-height:1.75}
+.form{max-width:660px; margin:0 auto; background:var(--paper); border:1px solid var(--line); padding:48px 44px}
+.total-box{max-width:660px; margin:0 auto 24px; background:var(--paper3); border:1px solid var(--ink); padding:20px 24px; text-align:center; font-size:.86rem; color:var(--soft)}
+.total-box b{font-family:var(--display); font-weight:600; font-size:1.6rem; color:var(--ink); display:block; margin:6px 0 6px}
+.total-box span{display:block; font-size:.8rem; color:var(--faint)}
+.total-box i{font-style:normal; color:var(--ink)}
+.field{margin-bottom:26px}
+.field label{display:block; font-family:var(--display); font-weight:500; font-size:.76rem;
+  letter-spacing:.08em; text-transform:uppercase; color:var(--ink); margin-bottom:10px}
+.field label .req{color:var(--soft)}
+.field input,.field select,.field textarea{
+  width:100%; font-family:var(--sans); font-size:.96rem; font-weight:300; color:var(--ink);
+  background:#fff; border:1px solid var(--line); padding:13px 15px; outline:none; transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--ink)}
+.field textarea{resize:vertical; min-height:96px}
+.submit{width:100%; background:var(--ink); color:#fff; border:1px solid var(--ink); padding:16px;
+  font-family:var(--display); font-weight:500; font-size:.84rem; letter-spacing:.14em; text-transform:uppercase;
+  cursor:pointer; transition:background .2s,color .2s}
+.submit:hover{background:#fff; color:var(--ink)}
+
+/* ---------- PAYMENT ---------- */
+.pay{padding:104px 0; text-align:center}
+.pay h2{font-family:var(--display); font-weight:500; font-size:2rem; margin-bottom:14px; letter-spacing:-.01em}
+.pay .lead{color:var(--soft); font-size:.96rem; font-weight:300; max-width:540px; margin:0 auto 44px; line-height:1.75}
+.qr{display:inline-block; background:#fff; border:1px solid var(--line); padding:24px}
+.qr img{width:240px; height:240px; object-fit:contain}
+.qr .ph{width:240px; height:240px; display:flex; align-items:center; justify-content:center; color:var(--faint);
+  font-size:.82rem; border:1px dashed var(--line); text-align:center; padding:20px; line-height:1.6}
+.pay .slip-btn{display:inline-block; margin-top:36px; background:var(--ink); color:#fff; border:1px solid var(--ink);
+  font-family:var(--display); font-weight:500; font-size:.84rem; letter-spacing:.1em; text-transform:uppercase;
+  padding:15px 34px; text-decoration:none; transition:opacity .2s}
+.pay .slip-btn:hover{opacity:.85}
+.steps{max-width:520px; margin:44px auto 0; text-align:left; list-style:none}
+.steps li{font-size:.94rem; font-weight:300; color:var(--soft); margin-bottom:14px; padding-left:4px; line-height:1.7}
+.steps li b{color:var(--ink); font-family:var(--display); font-weight:600; margin-right:6px}
+
+/* ---------- HOW IT WORKS ---------- */
+.how{background:var(--paper2); border-top:1px solid var(--line); padding:88px 0}
+.how h2{font-family:var(--display); font-weight:500; font-size:2rem; text-align:center; margin-bottom:14px; letter-spacing:-.01em}
+.how .lead{text-align:center; color:var(--soft); font-size:.96rem; max-width:560px; margin:0 auto 8px; line-height:1.75}
+.how .reassure{text-align:center; font-family:var(--display); font-weight:500; font-size:.82rem; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--ink); margin:0 auto 48px}
+.how .steps{max-width:560px; margin:0 auto; list-style:none}
+.how .steps li{font-size:.96rem; color:var(--soft); margin-bottom:16px; padding-left:4px; line-height:1.7}
+.how .steps li b{color:var(--ink); font-family:var(--display); font-weight:600; margin-right:8px}
+
+/* ---------- ABOUT ARTIST ---------- */
+.about{border-top:1px solid var(--line); padding:88px 0}
+.about .wrap{display:grid; grid-template-columns:240px 1fr; gap:52px; align-items:center; max-width:900px}
+.about .pic{width:240px; height:240px; object-fit:cover; border:1px solid var(--line)}
+.about .label{font-family:var(--display); font-weight:500; font-size:.74rem; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--faint); margin-bottom:16px}
+.about h2{font-family:var(--display); font-weight:500; font-size:1.7rem; line-height:1.2; letter-spacing:-.01em}
+.about .who-th{font-size:.95rem; color:var(--soft); margin-top:4px}
+.about p{font-size:.98rem; color:#3a352e; line-height:1.85; margin-top:18px; max-width:460px}
+.about .links{margin-top:22px; font-size:.92rem; color:var(--soft); line-height:2}
+.about .links a{color:var(--ink)}
+.about .cv-btn{display:inline-block; margin-top:18px; font-family:var(--display); font-weight:500; font-size:.74rem;
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink); border:1px solid var(--ink);
+  padding:11px 24px; text-decoration:none; transition:background .2s,color .2s}
+.about .cv-btn:hover{background:var(--ink); color:#fff}
+@media(max-width:640px){
+  .about .wrap{grid-template-columns:1fr; gap:28px; text-align:center; justify-items:center}
+  .about p,.about .links{margin-left:auto; margin-right:auto}
+}
+
+/* ---------- FOOTER ---------- */
+.foot{background:var(--ink); color:#bdbdbd; text-align:center; padding:60px 0; font-size:.86rem; font-weight:300}
+.foot a{color:#fff; text-decoration:none; border-bottom:1px solid rgba(255,255,255,.3)}
+.foot .who{font-family:var(--display); font-weight:500; font-size:1.05rem; color:#fff; margin-bottom:12px; letter-spacing:.02em}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:860px){.grid{grid-template-columns:repeat(2,1fr); gap:48px 32px}}
+@media(max-width:720px){
+  .wrap{padding:0 24px}
+  .cgrid{grid-template-columns:1fr; gap:44px}
+  .head{padding:72px 24px 44px}
+}
+@media(max-width:560px){
+  .grid{grid-template-columns:1fr; gap:48px}
+  .form{padding:34px 24px}
+}

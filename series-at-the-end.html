@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,25 +8,32 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Noto+Sans+Thai:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="gallery.css">
+<script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
 </head>
 <body>
 
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-set-lang="th">ไทย</button>
+  <button type="button" data-set-lang="en">EN</button>
+</div>
+
 <!-- ===== HEADER ===== -->
 <header class="head">
-  <div class="kicker">Dan's Originals · ชุดผลงาน</div>
+  <div class="kicker">Dan's Originals<span class="th-only"> · ชุดผลงาน</span><span class="en-only"> · Series</span></div>
   <h1>At The End You Must Wake Up</h1>
-  <div class="series-line">15 ผลงาน · สีน้ำ หมึก บนกระดาษ</div>
-  <div class="sub">ผลงานต้นฉบับชิ้นเดียวในโลก ลงนามโดยศิลปิน · จำหน่ายเฉพาะในประเทศไทย</div>
-  <a class="back" href="shop.html">← Dan's Originals · ทุกชุดผลงาน</a>
+  <div class="series-line"><span class="th-only">15 ผลงาน · สีน้ำ หมึก บนกระดาษ</span><span class="en-only">15 works · Watercolour &amp; ink on paper</span></div>
+  <div class="sub"><span class="th-only">ผลงานต้นฉบับชิ้นเดียวในโลก ลงนามโดยศิลปิน · จำหน่ายเฉพาะในประเทศไทย</span><span class="en-only">One-of-a-kind original works, signed by the artist · sold within Thailand only</span></div>
+  <a class="back" href="shop.html"><span class="th-only">← Dan's Originals · ทุกชุดผลงาน</span><span class="en-only">← Dan's Originals · All series</span></a>
 </header>
 
 <!-- ===== NOTICE ===== -->
 <div class="notice">
   <div class="wrap">
-    <span><b>จำหน่ายและจัดส่งเฉพาะในประเทศไทย</b></span>
-    <span><b>ผลงานต้นฉบับ</b> ชิ้นเดียว ไม่ใช่ภาพพิมพ์</span>
-    <span>ลงนามโดยศิลปิน · พร้อมใบรับรอง</span>
-    <span>จัดส่งลงทะเบียน / EMS ทั่วไทย แพ็กกันกระแทก</span>
+    <span><b><span class="th-only">จำหน่ายและจัดส่งเฉพาะในประเทศไทย</span><span class="en-only">Sold &amp; shipped within Thailand only</span></b></span>
+    <span><span class="th-only"><b>ผลงานต้นฉบับ</b> ชิ้นเดียว ไม่ใช่ภาพพิมพ์</span><span class="en-only"><b>Original</b> one-of-a-kind works, not prints</span></span>
+    <span><span class="th-only">ลงนามโดยศิลปิน · พร้อมใบรับรอง</span><span class="en-only">Signed by the artist · with certificate</span></span>
+    <span><span class="th-only">จัดส่งลงทะเบียน / EMS ทั่วไทย แพ็กกันกระแทก</span><span class="en-only">Registered / EMS shipping nationwide, securely packed</span></span>
   </div>
 </div>
 
@@ -44,14 +51,14 @@
     <div>
       <div class="label">About the Artist</div>
       <h2>ดนย บุญทัศนกุล</h2>
-      <div class="who-th">Danaya Buntasnakul · จิตรกร กรุงเทพมหานคร</div>
-      <p>ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง — ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี</p>
+      <div class="who-th">Danaya Buntasnakul · <span class="th-only">จิตรกร กรุงเทพมหานคร</span><span class="en-only">Painter, Bangkok</span></div>
+      <p><span class="th-only">ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง — ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี</span><span class="en-only">Working along the thin line between sleeping and waking, between the world we see and the world we only feel — across six solo exhibitions over fifteen years.</span></p>
       <div class="links">
-        Instagram <a href="https://www.instagram.com/artproducktion/" target="_blank" rel="noopener">@artproducktion</a> · โทร <a href="tel:+66808056940">080-805-6940</a><br>
-        อีเมล <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a>
+        Instagram <a href="https://www.instagram.com/artproducktion/" target="_blank" rel="noopener">@artproducktion</a> · <span class="th-only">โทร</span><span class="en-only">Tel</span> <a href="tel:+66808056940">080-805-6940</a><br>
+        <span class="th-only">อีเมล</span><span class="en-only">Email</span> <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a>
         <!-- LINE: รอ Dan ส่งมาเพิ่มภายหลัง -->
       </div>
-      <a class="cv-btn" href="cv.html">ประวัติศิลปิน · CV →</a>
+      <a class="cv-btn" href="cv.html"><span class="th-only">ประวัติศิลปิน · CV →</span><span class="en-only">Artist CV →</span></a>
     </div>
   </div>
 </section>
@@ -59,15 +66,15 @@
 <!-- ===== HOW IT WORKS ===== -->
 <section class="how">
   <div class="wrap">
-    <h2>ขั้นตอนการสั่งซื้อ</h2>
-    <p class="lead">ผลงานทุกชิ้นเป็นต้นฉบับชิ้นเดียว ยึดลำดับการยืนยันการโอนเป็นสำคัญ</p>
-    <p class="reassure">กรอกแบบฟอร์ม = แจ้งความสนใจ ยังไม่ผูกมัด — ศิลปินติดต่อกลับยืนยันก่อนเสมอ</p>
+    <h2><span class="th-only">ขั้นตอนการสั่งซื้อ</span><span class="en-only">How to Order</span></h2>
+    <p class="lead"><span class="th-only">ผลงานทุกชิ้นเป็นต้นฉบับชิ้นเดียว ยึดลำดับการยืนยันการโอนเป็นสำคัญ</span><span class="en-only">Every work is one of a kind; orders are confirmed in the sequence that payments are verified.</span></p>
+    <p class="reassure"><span class="th-only">กรอกแบบฟอร์ม = แจ้งความสนใจ ยังไม่ผูกมัด — ศิลปินติดต่อกลับยืนยันก่อนเสมอ</span><span class="en-only">Submitting the form registers your interest with no obligation — the artist always confirms with you first.</span></p>
     <ol class="steps">
-      <li><b>1.</b> เลือกผลงานที่ต้องการ — ระบบจะแสดงยอดรวม (ราคาผลงาน + ค่าจัดส่ง ฿200/การสั่งซื้อ) ให้อัตโนมัติ</li>
-      <li><b>2.</b> กรอกแบบฟอร์มสั่งซื้อ ศิลปินติดต่อกลับเพื่อยืนยัน</li>
-      <li><b>3.</b> ชำระเงินตามยอดรวมผ่าน PromptPay (QR ด้านล่าง)</li>
-      <li><b>4.</b> แจ้งโอน + แนบสลิปผ่านระบบ (ปุ่มใต้ QR)</li>
-      <li><b>5.</b> ศิลปินจัดส่งผลงานพร้อมใบรับรองความแท้ทางไปรษณีย์ลงทะเบียน / EMS</li>
+      <li><b>1.</b> <span class="th-only">เลือกผลงานที่ต้องการ — ระบบจะแสดงยอดรวม (ราคาผลงาน + ค่าจัดส่ง ฿200/การสั่งซื้อ) ให้อัตโนมัติ</span><span class="en-only">Choose the work you want — the total (artwork price + ฿200 shipping per order) is shown automatically.</span></li>
+      <li><b>2.</b> <span class="th-only">กรอกแบบฟอร์มสั่งซื้อ ศิลปินติดต่อกลับเพื่อยืนยัน</span><span class="en-only">Fill in the order form; the artist will contact you to confirm.</span></li>
+      <li><b>3.</b> <span class="th-only">ชำระเงินตามยอดรวมผ่าน PromptPay (QR ด้านล่าง)</span><span class="en-only">Pay the total via PromptPay (QR below).</span></li>
+      <li><b>4.</b> <span class="th-only">แจ้งโอน + แนบสลิปผ่านระบบ (ปุ่มใต้ QR)</span><span class="en-only">Report the transfer and attach the slip (button below the QR).</span></li>
+      <li><b>5.</b> <span class="th-only">ศิลปินจัดส่งผลงานพร้อมใบรับรองความแท้ทางไปรษณีย์ลงทะเบียน / EMS</span><span class="en-only">The artist ships the work with its certificate of authenticity by registered / EMS post.</span></li>
     </ol>
   </div>
 </section>
@@ -75,46 +82,46 @@
 <!-- ===== ORDER FORM ===== -->
 <section class="order" id="order">
   <div class="wrap">
-    <h2>แบบฟอร์มสั่งซื้อ</h2>
-    <p class="lead">กรอกรายละเอียดด้านล่าง ศิลปินจะติดต่อกลับเพื่อยืนยันการสั่งซื้อและการจัดส่ง<br><b>มีค่าจัดส่ง 200 บาท ต่อการสั่งซื้อ (รวมในยอดด้านล่างแล้ว)</b></p>
+    <h2><span class="th-only">แบบฟอร์มสั่งซื้อ</span><span class="en-only">Order Form</span></h2>
+    <p class="lead"><span class="th-only">กรอกรายละเอียดด้านล่าง ศิลปินจะติดต่อกลับเพื่อยืนยันการสั่งซื้อและการจัดส่ง<br><b>มีค่าจัดส่ง 200 บาท ต่อการสั่งซื้อ (รวมในยอดด้านล่างแล้ว)</b></span><span class="en-only">Fill in the details below; the artist will contact you to confirm your order and delivery.<br><b>A flat ฿200 shipping fee applies per order (already included in the total below).</b></span></p>
 
     <!-- Formspree endpoint (ออเดอร์เข้าอีเมล dan.pittore@icloud.com) -->
     <form class="form" action="https://formspree.io/f/meewodjb" method="POST">
       <input type="hidden" name="_subject" value="คำสั่งซื้อผลงานต้นฉบับจากเว็บไซต์">
       <div class="field">
-        <label>ชื่อ–นามสกุล <span class="req">*</span></label>
+        <label><span class="th-only">ชื่อ–นามสกุล</span><span class="en-only">Full name</span> <span class="req">*</span></label>
         <input type="text" name="ชื่อผู้สั่งซื้อ" required>
       </div>
       <div class="field">
-        <label>ผลงานที่ต้องการ <span class="req">*</span></label>
+        <label><span class="th-only">ผลงานที่ต้องการ</span><span class="en-only">Work you want</span> <span class="req">*</span></label>
         <select name="ผลงานที่สั่งซื้อ" id="workSelect" required>
-          <option value="">— เลือกผลงาน —</option>
+          <option value="" id="optPlaceholder">— เลือกผลงาน —</option>
         </select>
       </div>
 
       <div class="total-box" id="totalBox" style="display:none">
-        ยอดรวมที่ต้องโอน
+        <span class="th-only">ยอดรวมที่ต้องโอน</span><span class="en-only">Total to transfer</span>
         <b id="totalAmt">—</b>
-        <span>ราคาผลงาน <i id="artAmt">—</i> + ค่าจัดส่ง ฿200 ต่อการสั่งซื้อ</span>
+        <span><span class="th-only">ราคาผลงาน <i id="artAmt">—</i> + ค่าจัดส่ง ฿200 ต่อการสั่งซื้อ</span><span class="en-only">Artwork price <i id="artAmtEn">—</i> + ฿200 shipping per order</span></span>
         <input type="hidden" name="ยอดรวมที่ต้องโอน" id="totalHidden">
       </div>
       <div class="field">
-        <label>ช่องทางติดต่อกลับ (โทร / LINE ID) <span class="req">*</span></label>
-        <input type="text" name="ช่องทางติดต่อ" placeholder="เช่น 08x-xxx-xxxx หรือ LINE ID" required>
+        <label><span class="th-only">ช่องทางติดต่อกลับ (โทร / LINE ID)</span><span class="en-only">Contact (phone / LINE ID)</span> <span class="req">*</span></label>
+        <input type="text" name="ช่องทางติดต่อ" id="contactInput" placeholder="เช่น 08x-xxx-xxxx หรือ LINE ID" required>
       </div>
       <div class="field">
-        <label>อีเมล</label>
+        <label><span class="th-only">อีเมล</span><span class="en-only">Email</span></label>
         <input type="email" name="อีเมล">
       </div>
       <div class="field">
-        <label>ที่อยู่จัดส่ง (ในประเทศไทย) <span class="req">*</span></label>
+        <label><span class="th-only">ที่อยู่จัดส่ง (ในประเทศไทย)</span><span class="en-only">Shipping address (within Thailand)</span> <span class="req">*</span></label>
         <textarea name="ที่อยู่จัดส่ง" required></textarea>
       </div>
       <div class="field">
-        <label>ข้อความถึงศิลปิน</label>
+        <label><span class="th-only">ข้อความถึงศิลปิน</span><span class="en-only">Message to the artist</span></label>
         <textarea name="ข้อความ"></textarea>
       </div>
-      <button type="submit" class="submit">ส่งคำสั่งซื้อ</button>
+      <button type="submit" class="submit"><span class="th-only">ส่งคำสั่งซื้อ</span><span class="en-only">Submit order</span></button>
     </form>
   </div>
 </section>
@@ -122,8 +129,8 @@
 <!-- ===== PAYMENT ===== -->
 <section class="pay">
   <div class="wrap">
-    <h2>ชำระเงิน · PromptPay</h2>
-    <p class="lead">หลังได้รับการยืนยันราคาและค่าจัดส่งแล้ว ชำระผ่าน PromptPay ได้ตามขั้นตอน</p>
+    <h2><span class="th-only">ชำระเงิน · PromptPay</span><span class="en-only">Payment · PromptPay</span></h2>
+    <p class="lead"><span class="th-only">หลังได้รับการยืนยันราคาและค่าจัดส่งแล้ว ชำระผ่าน PromptPay ได้ตามขั้นตอน</span><span class="en-only">Once your price and shipping are confirmed, pay via PromptPay as below.</span></p>
 
     <!-- QR PromptPay ของศิลปิน -->
     <div class="qr">
@@ -132,7 +139,7 @@
     </div>
 
     <!-- ระบบแจ้งโอน + แนบสลิป (Apps Script web app) -->
-    <a class="slip-btn" href="https://script.google.com/macros/s/AKfycbzY9otafw6gP9LLPRWPFBlGRCnNNzfq-7--0FS8dvgQ1C0_kHLYv6PH86b4crUsGWzP/exec" target="_blank" rel="noopener">โอนแล้ว → แจ้งโอน + แนบสลิป</a>
+    <a class="slip-btn" href="https://script.google.com/macros/s/AKfycbzY9otafw6gP9LLPRWPFBlGRCnNNzfq-7--0FS8dvgQ1C0_kHLYv6PH86b4crUsGWzP/exec" target="_blank" rel="noopener"><span class="th-only">โอนแล้ว → แจ้งโอน + แนบสลิป</span><span class="en-only">Paid → report transfer + attach slip</span></a>
   </div>
 </section>
 
@@ -140,8 +147,8 @@
 <footer class="foot">
   <div class="wrap">
     <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
-    <div><a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a> · กรุงเทพมหานคร ประเทศไทย</div>
-    <div style="margin-top:14px"><a href="shop.html">Dan's Originals</a> · <a href="index.html">นิทรรศการ</a> · <a href="cv.html">ประวัติศิลปิน</a></div>
+    <div><a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a> · <span class="th-only">กรุงเทพมหานคร ประเทศไทย</span><span class="en-only">Bangkok, Thailand</span></div>
+    <div style="margin-top:14px"><a href="shop.html">Dan's Originals</a> · <a href="index.html"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibition</span></a> · <a href="cv.html"><span class="th-only">ประวัติศิลปิน</span><span class="en-only">Artist CV</span></a></div>
   </div>
 </footer>
 
@@ -149,9 +156,9 @@
 /* =========================================================
    รายการผลงานที่จำหน่าย
    ⚠️ Dan แก้ตรงนี้ที่เดียว:
-   - price : ใส่ราคาบาท (ตัวเลข) เช่น price: 4500   ตอนนี้ยังเป็น null = แสดง "สอบถามราคา"
-             >>> Dan เลือก "โชว์ราคาจริงทุกชิ้น" แล้ว — รอ Dan ส่งราคา 15 ชิ้นมาเติม <<<
+   - price : ใส่ราคาบาท (ตัวเลข) เช่น price: 4500   ถ้าเป็น null = แสดง "สอบถามราคา"
    - status: 'available' = ขายอยู่ · 'sold' = ขายแล้ว (การ์ดจะจางลง + กดสั่งไม่ได้)
+   หมายเหตุ: เนื้อหา meta ภาษาอังกฤษ (ปี/เทคนิค/ขนาด) ระบบแปลงให้อัตโนมัติ ไม่ต้องกรอกเอง
    ========================================================= */
 const works = [
   {img:'images/02-house-of-dream.jpg',      title:'House of Dream',          meta:'2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.', price:3000,  status:'available'},
@@ -172,7 +179,21 @@ const works = [
 ];
 
 const SHIPPING = 200; // ค่าจัดส่งเหมาทั่วไทย (Dan แก้ตัวเลขนี้ที่เดียว)
-const baht = n => n==null ? 'สอบถามราคา' : '฿ ' + Number(n).toLocaleString('th-TH');
+
+/* ---------- helpers ---------- */
+const baht = n => n==null ? null : '฿ ' + Number(n).toLocaleString('th-TH');
+const priceHTML = n => n==null
+  ? '<span class="th-only">สอบถามราคา</span><span class="en-only">Price on request</span>'
+  : baht(n);
+// แปลง meta ไทย → อังกฤษ (ปี พ.ศ.→ค.ศ. · เทคนิค · ขนาด)
+const metaEN = th => {
+  const p = th.split(' · ');
+  const yEN = (parseInt(p[0],10) - 543);
+  const med = (p[1]||'').includes('สีน้ำ') ? 'Watercolour & ink on paper' : 'Ink on paper';
+  const size = (p[2]||'').replace('ซม.','cm').replace('ซม','cm').trim();
+  return yEN + ' · ' + med + ' · ' + size;
+};
+
 const grid = document.getElementById('grid');
 const sel  = document.getElementById('workSelect');
 
@@ -181,18 +202,20 @@ works.forEach(w => {
   const card = document.createElement('div');
   card.className = 'card' + (sold ? ' sold' : '');
   card.innerHTML =
-    '<div class="frame">' + (sold ? '<span class="sold-tag">ขายแล้ว</span>' : '') +
+    '<div class="frame">' +
+      (sold ? '<span class="sold-tag"><span class="th-only">ขายแล้ว</span><span class="en-only">Sold</span></span>' : '') +
       '<img src="'+w.img+'" alt="'+w.title+'"></div>' +
     '<h3>'+w.title+'</h3>' +
-    '<div class="meta">'+w.meta+'</div>' +
-    '<div class="price">'+baht(w.price)+'</div>' +
-    (sold ? '<button class="buy" disabled>ขายแล้ว</button>'
-          : '<button class="buy" data-t="'+w.title+'">สนใจชิ้นนี้ →</button>');
+    '<div class="meta"><span class="th-only">'+w.meta+'</span><span class="en-only">'+metaEN(w.meta)+'</span></div>' +
+    '<div class="price">'+priceHTML(w.price)+'</div>' +
+    (sold ? '<button class="buy" disabled><span class="th-only">ขายแล้ว</span><span class="en-only">Sold</span></button>'
+          : '<button class="buy" data-t="'+w.title+'"><span class="th-only">สนใจชิ้นนี้ →</span><span class="en-only">Enquire →</span></button>');
   grid.appendChild(card);
 
   if(!sold){
     const o = document.createElement('option');
-    o.value = w.title; o.textContent = w.title + ' — ' + baht(w.price);
+    o.value = w.title;
+    o.textContent = w.title + (w.price!=null ? ' — ' + baht(w.price) : '');
     sel.appendChild(o);
   }
 });
@@ -203,6 +226,7 @@ sel.addEventListener('change', () => {
   const box = document.getElementById('totalBox');
   if(w && w.price != null){
     document.getElementById('artAmt').textContent = baht(w.price);
+    document.getElementById('artAmtEn').textContent = baht(w.price);
     document.getElementById('totalAmt').textContent = baht(w.price + SHIPPING);
     document.getElementById('totalHidden').value = baht(w.price + SHIPPING);
     box.style.display = 'block';
@@ -218,6 +242,25 @@ grid.addEventListener('click', e => {
   sel.dispatchEvent(new Event('change'));
   document.getElementById('order').scrollIntoView({behavior:'smooth'});
 });
+
+/* ---------- LANGUAGE TOGGLE ---------- */
+const I18N = {
+  th:{ selectPlaceholder:'— เลือกผลงาน —', contactPH:'เช่น 08x-xxx-xxxx หรือ LINE ID' },
+  en:{ selectPlaceholder:'— Select a work —', contactPH:'e.g. 08x-xxx-xxxx or LINE ID' }
+};
+function applyLang(l){
+  document.documentElement.setAttribute('data-lang', l);
+  document.documentElement.setAttribute('lang', l);
+  const t = I18N[l] || I18N.th;
+  const ph = document.getElementById('optPlaceholder'); if(ph) ph.textContent = t.selectPlaceholder;
+  const ci = document.getElementById('contactInput');  if(ci) ci.placeholder = t.contactPH;
+  try{ localStorage.setItem('portfolioLang', l); }catch(e){}
+}
+document.querySelectorAll('[data-set-lang]').forEach(function(b){
+  b.addEventListener('click', function(){ applyLang(b.getAttribute('data-set-lang')); });
+});
+// ตั้งค่าเริ่มต้นตามที่จำไว้ (เผื่อ placeholder ที่สร้างด้วย JS)
+applyLang(document.documentElement.getAttribute('data-lang') || 'th');
 </script>
 
 </body>

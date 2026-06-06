@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,6 +27,19 @@
   img{display:block; max-width:100%; height:auto}
   .wrap{max-width:1060px; margin:0 auto; padding:0 32px}
 
+  /* LANGUAGE TOGGLE */
+  [data-lang="th"] .en-only{display:none !important}
+  [data-lang="en"] .th-only{display:none !important}
+  .lang-switch{position:fixed; top:14px; right:14px; z-index:200; display:flex;
+    background:rgba(246,242,234,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid var(--line); border-radius:999px; overflow:hidden;
+    box-shadow:0 4px 16px -8px rgba(40,34,26,.4); font-family:var(--display)}
+  .lang-switch button{border:none; background:none; cursor:pointer; padding:7px 16px;
+    font-size:.82rem; letter-spacing:.06em; color:var(--soft); font-family:inherit}
+  .lang-switch button:hover{color:var(--ink)}
+  [data-lang="th"] .lang-switch [data-set-lang="th"],
+  [data-lang="en"] .lang-switch [data-set-lang="en"]{background:var(--accent); color:#fff}
+
   /* ---------- COVER ---------- */
   .cover{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
     text-align:center; padding:60px 32px; position:relative}
@@ -53,6 +66,7 @@
   .act .num{font-family:var(--display); font-size:2.4rem; font-style:italic; color:var(--faint); letter-spacing:.1em}
   .act .en{font-family:var(--display); font-size:.95rem; letter-spacing:.35em; text-transform:uppercase; color:var(--soft); margin:14px 0 6px}
   .act h2{font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,4vw,2.5rem); letter-spacing:.02em}
+  .act h2.en-only{font-family:var(--display)}
   .act .concept{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:680px;
     margin:34px auto 0; color:#3a352e; text-align:left}
   .rule{width:54px; height:1px; background:var(--accent); margin:34px auto 0}
@@ -102,7 +116,7 @@
   /* ---------- PRINT (Save as PDF) ---------- */
   @media print{
     body{background:#fff}
-    .scroll-cue{display:none}
+    .lang-switch,.scroll-cue{display:none}
     section,.act,.plate{padding:24px 0; page-break-inside:avoid}
     .cover{min-height:auto; page-break-after:always}
     .plate img,.cover figure{box-shadow:none}
@@ -111,27 +125,34 @@
     .statement,.contact{background:#fff}
   }
 </style>
+<script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
 </head>
 <body>
 
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-set-lang="th">ไทย</button>
+  <button type="button" data-set-lang="en">EN</button>
+</div>
+
 <!-- ===== COVER ===== -->
 <header class="cover">
-  <div class="kicker">นิทรรศการเดี่ยว · ชุดผลงาน</div>
+  <div class="kicker"><span class="th-only">นิทรรศการเดี่ยว · ชุดผลงาน</span><span class="en-only">Solo Exhibition · Series</span></div>
   <figure><img src="images/01-at-the-end.jpg" alt="At The End You Must Wake Up"></figure>
   <h1>At The End<br><em>You Must Wake Up</em></h1>
   <div class="artist">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
-  <div class="sub">จิตรกรรมสีน้ำ หมึก และลายเส้นบนกระดาษ</div>
-  <div class="scroll-cue">เลื่อนลง</div>
+  <div class="sub"><span class="th-only">จิตรกรรมสีน้ำ หมึก และลายเส้นบนกระดาษ</span><span class="en-only">Watercolour, ink and drawing on paper</span></div>
+  <div class="scroll-cue"><span class="th-only">เลื่อนลง</span><span class="en-only">Scroll</span></div>
 </header>
 
 <!-- ===== STATEMENT ===== -->
 <section class="statement">
   <div class="wrap">
-    <div class="label">Artist Statement · แนวคิดศิลปิน</div>
-    <p class="lead">ดนย บุญทัศนกุล ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง</p>
-    <p>เขาผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</p>
-    <p>เขาเรียนจิตรกรรมที่มหาวิทยาลัยเชียงใหม่ (ศิลปมหาบัณฑิต) และเคยศึกษาที่ L'Accademia di Belle Arti di Firenze ประเทศอิตาลี ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี งานของเขาวนเวียนอยู่กับความใกล้ชิด การพลัดพราก และโอกาสที่หมุนกลับมาใหม่ได้เสมอ—เหมือนนาฬิกาทรายที่เพียงรอวันถูกพลิก</p>
-    <p>นอกจากเป็นจิตรกร เขายังเป็นนักแสดงละครเวทีและนักร้องประสานเสียงที่ได้รับรางวัลระดับนานาชาติ ประสบการณ์บนเวทีและในเสียงเพลงไหลกลับเข้ามาในงานวาด ในรูปของจังหวะ การฟัง และการมองอย่างช้า ๆ</p>
+    <div class="label">Artist Statement<span class="th-only"> · แนวคิดศิลปิน</span></div>
+    <p class="lead"><span class="th-only">ดนย บุญทัศนกุล ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง</span><span class="en-only">Danaya Buntasnakul works along the thin line between sleeping and waking — between the world we see and the world we only feel.</span></p>
+    <p><span class="th-only">เขาผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</span><span class="en-only">He blends watercolour, ink and a musical sense of rhythm until landscapes become reveries, and dreams become the place where we dare to face what, awake, we refuse to admit.</span></p>
+    <p><span class="th-only">เขาเรียนจิตรกรรมที่มหาวิทยาลัยเชียงใหม่ (ศิลปมหาบัณฑิต) และเคยศึกษาที่ L'Accademia di Belle Arti di Firenze ประเทศอิตาลี ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี งานของเขาวนเวียนอยู่กับความใกล้ชิด การพลัดพราก และโอกาสที่หมุนกลับมาใหม่ได้เสมอ—เหมือนนาฬิกาทรายที่เพียงรอวันถูกพลิก</span><span class="en-only">He studied painting at Chiang Mai University (M.F.A.) and at the Accademia di Belle Arti di Firenze in Italy. Across six solo exhibitions over fifteen years, his work returns again and again to intimacy, separation, and the chance that can always come around once more — like an hourglass simply waiting to be turned.</span></p>
+    <p><span class="th-only">นอกจากเป็นจิตรกร เขายังเป็นนักแสดงละครเวทีและนักร้องประสานเสียงที่ได้รับรางวัลระดับนานาชาติ ประสบการณ์บนเวทีและในเสียงเพลงไหลกลับเข้ามาในงานวาด ในรูปของจังหวะ การฟัง และการมองอย่างช้า ๆ</span><span class="en-only">Beyond painting, he is a stage actor and an internationally awarded choral singer. His experience on stage and in song flows back into his drawing as rhythm, as listening, and as a slow way of seeing.</span></p>
   </div>
 </section>
 
@@ -139,8 +160,9 @@
 <div class="act wrap">
   <div class="num">I</div>
   <div class="en">Falling Asleep</div>
-  <h2>เคลิ้มหลับ</h2>
-  <p class="concept">นิทรรศการนี้ขอชวนผู้ชมเดินผ่านความฝันหนึ่งคืน เริ่มจากภาพของสุนัขจิ้งจอกที่ขดตัวหลับกลางทุ่ง—ภาพแทนของจิตใจที่กำลังพักผ่อนเพื่อจะหายดี ก้อนเมฆแปลงร่างเป็นสัตว์ ปราสาทเล็ก ๆ ตั้งอยู่บนหลังของมัน ทุกอย่างค่อย ๆ จมลงสู่ห้วงฝัน</p>
+  <h2 class="th-only">เคลิ้มหลับ</h2>
+  <h2 class="en-only">Falling Asleep</h2>
+  <p class="concept"><span class="th-only">นิทรรศการนี้ขอชวนผู้ชมเดินผ่านความฝันหนึ่งคืน เริ่มจากภาพของสุนัขจิ้งจอกที่ขดตัวหลับกลางทุ่ง—ภาพแทนของจิตใจที่กำลังพักผ่อนเพื่อจะหายดี ก้อนเมฆแปลงร่างเป็นสัตว์ ปราสาทเล็ก ๆ ตั้งอยู่บนหลังของมัน ทุกอย่างค่อย ๆ จมลงสู่ห้วงฝัน</span><span class="en-only">This exhibition invites you to walk through a single night's dream. It begins with a fox curled asleep in a field — an image of a mind at rest, healing. Clouds shift into animals, a small castle rests on their backs, and everything sinks slowly into the dream.</span></p>
   <div class="rule"></div>
 </div>
 
@@ -148,30 +170,31 @@
 <div class="act wrap">
   <div class="num">II</div>
   <div class="en">The Dream</div>
-  <h2>ในความฝัน</h2>
-  <p class="concept"><i>At The End You Must Wake Up</i> คือบันทึกของเรื่องที่เกิดขึ้นแล้วผ่านไป แต่ส่วนลึกของใจยังไม่ยอมปล่อยความรู้สึกที่อยู่นอกเหนือการควบคุม การวาดชุดนี้จึงเป็นการบำบัดตัวเอง—กล่อมใจให้หลับอยู่ในฝัน จนถึงวันหนึ่งที่ใจถูกชำระจนใส และพร้อมจะลืมตาตื่นขึ้นอีกครั้ง</p>
+  <h2 class="th-only">ในความฝัน</h2>
+  <h2 class="en-only">The Dream</h2>
+  <p class="concept"><span class="th-only"><i>At The End You Must Wake Up</i> คือบันทึกของเรื่องที่เกิดขึ้นแล้วผ่านไป แต่ส่วนลึกของใจยังไม่ยอมปล่อยความรู้สึกที่อยู่นอกเหนือการควบคุม การวาดชุดนี้จึงเป็นการบำบัดตัวเอง—กล่อมใจให้หลับอยู่ในฝัน จนถึงวันหนึ่งที่ใจถูกชำระจนใส และพร้อมจะลืมตาตื่นขึ้นอีกครั้ง</span><span class="en-only"><i>At The End You Must Wake Up</i> is a record of things that happened and passed, while some deep part of the heart still refuses to release feelings beyond its control. Making this series became a way of healing — lulling the heart to sleep within the dream, until the day it is washed clear and ready to open its eyes again.</span></p>
   <div class="rule"></div>
 </div>
 
 <div class="pair">
   <figure>
     <img src="images/02-house-of-dream.jpg" alt="House of Dream">
-    <figcaption><span class="t">House of Dream</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">หอยทากค่อย ๆ เคลื่อนผ่านท้องทุ่ง แบกถ้วยชาที่ภายในมีบ้านหลังเล็กบนเนินเขาเขียว และดอกไม้สีชมพูดอกโตชูก้านขึ้นฟ้า—บ้านในฝันที่เดินทางไปกับเราทุกหนแห่ง</span></figcaption>
+    <figcaption><span class="t">House of Dream</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">หอยทากค่อย ๆ เคลื่อนผ่านท้องทุ่ง แบกถ้วยชาที่ภายในมีบ้านหลังเล็กบนเนินเขาเขียว และดอกไม้สีชมพูดอกโตชูก้านขึ้นฟ้า—บ้านในฝันที่เดินทางไปกับเราทุกหนแห่ง</span><span class="en-only">A snail drifts across the fields carrying a teacup that holds a little house on a green hill, a large pink flower reaching for the sky — the dream-home that travels with us everywhere.</span></span></figcaption>
   </figure>
   <figure>
     <img src="images/03-just-two-of-us.jpg" alt="Just Two of Us">
-    <figcaption><span class="t">Just Two of Us</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">บ้านหินสไตล์ทัสคานีตั้งอยู่ใต้ท้องฟ้าที่หมุนวนแบบแวนโก๊ะ บนหอคอยมีนาฬิกาทรายประดับ รายล้อมด้วยแมว บทเพลง และดวงจันทร์—ความทรงจำจากอิตาลีที่ยังหมุนไปกับจังหวะของเวลา</span></figcaption>
+    <figcaption><span class="t">Just Two of Us</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">บ้านหินสไตล์ทัสคานีตั้งอยู่ใต้ท้องฟ้าที่หมุนวนแบบแวนโก๊ะ บนหอคอยมีนาฬิกาทรายประดับ รายล้อมด้วยแมว บทเพลง และดวงจันทร์—ความทรงจำจากอิตาลีที่ยังหมุนไปกับจังหวะของเวลา</span><span class="en-only">A Tuscan stone house beneath a sky swirling like Van Gogh's, an hourglass set upon its tower, surrounded by cats, songs and the moon — memories of Italy still turning with the rhythm of time.</span></span></figcaption>
   </figure>
 </div>
 
 <div class="pair">
   <figure>
     <img src="images/04-our-song.jpg" alt="Our Song">
-    <figcaption><span class="t">Our Song</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">สุนัขจิ้งจอกหวนกลับมาอีกครั้ง คราวนี้ห้อมล้อมด้วยโน้ตเพลง เป็ด และดวงจันทร์—บทเพลงที่โอบกอดความฝันเอาไว้</span></figcaption>
+    <figcaption><span class="t">Our Song</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">สุนัขจิ้งจอกหวนกลับมาอีกครั้ง คราวนี้ห้อมล้อมด้วยโน้ตเพลง เป็ด และดวงจันทร์—บทเพลงที่โอบกอดความฝันเอาไว้</span><span class="en-only">The fox returns once more, now encircled by musical notes, ducks and the moon — a song that holds the dream in its arms.</span></span></figcaption>
   </figure>
   <figure>
     <img src="images/05-song-of-sun-and-moon.jpg" alt="Song of Sun and Moon">
-    <figcaption><span class="t">Song of Sun and Moon</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">ใบหน้าของดวงอาทิตย์และดวงจันทร์หลอมรวมเป็นหนึ่งเดียว ลอยอยู่ท่ามกลางดอกไม้และสรรพสัตว์ในห้วงฝัน—สองขั้วที่อยู่ร่วมกันอย่างอ่อนโยน</span></figcaption>
+    <figcaption><span class="t">Song of Sun and Moon</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">ใบหน้าของดวงอาทิตย์และดวงจันทร์หลอมรวมเป็นหนึ่งเดียว ลอยอยู่ท่ามกลางดอกไม้และสรรพสัตว์ในห้วงฝัน—สองขั้วที่อยู่ร่วมกันอย่างอ่อนโยน</span><span class="en-only">The faces of sun and moon melt into one, floating among the flowers and creatures of the dream — two opposites resting gently together.</span></span></figcaption>
   </figure>
 </div>
 
@@ -179,90 +202,93 @@
 <div class="act wrap">
   <div class="num">III</div>
   <div class="en">The Mechanism</div>
-  <h2>กลไกของนาฬิกาทราย</h2>
-  <p class="concept">โอกาสผ่านมาแล้วผ่านไป หลายเรื่องเริ่มต้นและจบลงอย่างไม่มีเยื่อใย เหมือนความฝันที่เราไม่อยากลืมตาตื่น นาฬิกาทรายมีความหมายมากกว่าเครื่องนับเวลาถอยหลัง เมื่อทรายหมด มันเพียงนิ่งรอวันถูกพลิกกลับ เพื่อเริ่มต้นใหม่อย่างไม่รู้จบ—เช่นเดียวกับความรัก ความสัมพันธ์ ชีวิต และโอกาส งานหมึกในองก์นี้คือ "ภายใน" ของนาฬิกาเรือนนั้น: เส้นที่ถักทอกันแน่นจนเวลากลายเป็นวัฏจักร</p>
+  <h2 class="th-only">กลไกของนาฬิกาทราย</h2>
+  <h2 class="en-only">The Mechanism</h2>
+  <p class="concept"><span class="th-only">โอกาสผ่านมาแล้วผ่านไป หลายเรื่องเริ่มต้นและจบลงอย่างไม่มีเยื่อใย เหมือนความฝันที่เราไม่อยากลืมตาตื่น นาฬิกาทรายมีความหมายมากกว่าเครื่องนับเวลาถอยหลัง เมื่อทรายหมด มันเพียงนิ่งรอวันถูกพลิกกลับ เพื่อเริ่มต้นใหม่อย่างไม่รู้จบ—เช่นเดียวกับความรัก ความสัมพันธ์ ชีวิต และโอกาส งานหมึกในองก์นี้คือ "ภายใน" ของนาฬิกาเรือนนั้น: เส้นที่ถักทอกันแน่นจนเวลากลายเป็นวัฏจักร</span><span class="en-only">Chances come and go; many things begin and end without sentiment, like a dream we would rather not wake from. The hourglass means more than a countdown. When the sand runs out it simply waits, still, to be turned over — beginning again, endlessly: like love, like relationships, like life and opportunity. The ink works in this act are the "interior" of that hourglass: lines woven so tightly that time itself becomes a cycle.</span></p>
   <div class="rule"></div>
 </div>
 
 <div class="plate"><div class="wrap"><figure>
   <img src="images/06-love-and-peace.jpg" alt="Love and Peace">
-  <figcaption><span class="t">Love and Peace</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span>
-  <span class="note">นกพิราบขาวที่ก่อตัวขึ้นจาก "ที่ว่าง" ท่ามกลางหมึกอันแน่นหนา—ความสงบที่โผล่พ้นจากความวุ่นวาย</span></figcaption>
+  <figcaption><span class="t">Love and Peace</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span>
+  <span class="note"><span class="th-only">นกพิราบขาวที่ก่อตัวขึ้นจาก "ที่ว่าง" ท่ามกลางหมึกอันแน่นหนา—ความสงบที่โผล่พ้นจากความวุ่นวาย</span><span class="en-only">A white dove formed from the "empty space" within dense ink — peace emerging out of turmoil.</span></span></figcaption>
 </figure></div></div>
 
 <div class="pair">
   <figure>
     <img src="images/08-sun-and-moon.jpg" alt="Sun and Moon">
-    <figcaption><span class="t">Sun and Moon</span><span class="m">2565 · หมึกบนกระดาษ · 28 × 21 ซม.</span></figcaption>
+    <figcaption><span class="t">Sun and Moon</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 28 × 21 ซม.</span><span class="en-only">2022 · Ink on paper · 28 × 21 cm</span></span></figcaption>
   </figure>
   <figure>
     <img src="images/07-we-meet-in-the-sky.jpg" alt="We Meet in the Sky">
-    <figcaption><span class="t">We Meet in the Sky</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span></figcaption>
+    <figcaption><span class="t">We Meet in the Sky</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span></figcaption>
   </figure>
 </div>
 
 <div class="plate"><div class="wrap"><figure>
   <img src="images/09-missing-you.jpg" alt="Missing You">
-  <figcaption><span class="t">Missing You</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 28 × 42 ซม.</span>
-  <span class="note">งานหมึกแน่นเต็มผืน พลังงานสูง สีสันปะทุ—ลายเซ็นของชุด New Chapter ที่ความคิดถึงกลายเป็นเขาวงกต</span></figcaption>
+  <figcaption><span class="t">Missing You</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 28 × 42 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 28 × 42 cm</span></span>
+  <span class="note"><span class="th-only">งานหมึกแน่นเต็มผืน พลังงานสูง สีสันปะทุ—ลายเซ็นของชุด New Chapter ที่ความคิดถึงกลายเป็นเขาวงกต</span><span class="en-only">Dense, high-energy ink with bursting colour — a signature of the New Chapter series, where longing becomes a labyrinth.</span></span></figcaption>
 </figure></div></div>
 
 <!-- ===== ACT IV : THE TRUE HOME ===== -->
 <div class="act wrap">
   <div class="num">IV</div>
   <div class="en">The True Home</div>
-  <h2>บ้านที่แท้จริง</h2>
-  <p class="concept">OSHO ว่าไว้ว่า ปัญญาญาณเปรียบเหมือนสะพานที่เชื่อมทางให้เราเดินกลับสู่บ้านที่แท้จริง—บ้านที่มีอยู่มาตลอด ตั้งอยู่ตรงนั้นก่อนเราเกิดและหลังเราตาย เราไม่ใช่เจ้าของบ้าน เราเป็นส่วนหนึ่งของมัน สะพานที่พาไปสู่บ้านนั้นซ่อนอยู่ทั่วทุกหนแห่ง—ในแววตาของสุนัขใต้แดด ในควันบาง ๆ จากถ้วยกาแฟ หรือแม้แต่ในภาพวาดสักภาพ ลายเส้นหมึกบนกระดาษชุดนี้ คือสิ่งที่ศิลปินค้นพบแล้วนำกลับมาเล่า</p>
+  <h2 class="th-only">บ้านที่แท้จริง</h2>
+  <h2 class="en-only">The True Home</h2>
+  <p class="concept"><span class="th-only">OSHO ว่าไว้ว่า ปัญญาญาณเปรียบเหมือนสะพานที่เชื่อมทางให้เราเดินกลับสู่บ้านที่แท้จริง—บ้านที่มีอยู่มาตลอด ตั้งอยู่ตรงนั้นก่อนเราเกิดและหลังเราตาย เราไม่ใช่เจ้าของบ้าน เราเป็นส่วนหนึ่งของมัน สะพานที่พาไปสู่บ้านนั้นซ่อนอยู่ทั่วทุกหนแห่ง—ในแววตาของสุนัขใต้แดด ในควันบาง ๆ จากถ้วยกาแฟ หรือแม้แต่ในภาพวาดสักภาพ ลายเส้นหมึกบนกระดาษชุดนี้ คือสิ่งที่ศิลปินค้นพบแล้วนำกลับมาเล่า</span><span class="en-only">Osho said that intuition is like a bridge that leads us back to our true home — a home that has always been there, standing before we are born and after we die. We do not own the home; we are part of it. The bridge to it hides everywhere — in the eyes of a dog in the sun, in the thin steam rising from a cup of coffee, even in a single painting. These ink drawings on paper are what the artist found there and brought back to tell.</span></p>
   <div class="rule"></div>
 </div>
 
 <div class="plate"><div class="wrap"><figure>
   <img src="images/10-stone-bridge.jpg" alt="สะพานหิน / I Am Home">
-  <figcaption><span class="t">I Am Home — Bridge</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span>
-  <span class="note">ซุ้มสะพานหินใต้ท้องฟ้าที่ไหวเอน—ภาพแทนของ "สะพานสู่บ้านที่แท้จริง"</span></figcaption>
+  <figcaption><span class="t">I Am Home — Bridge</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span>
+  <span class="note"><span class="th-only">ซุ้มสะพานหินใต้ท้องฟ้าที่ไหวเอน—ภาพแทนของ "สะพานสู่บ้านที่แท้จริง"</span><span class="en-only">A stone bridge arch beneath a swaying sky — an image of the "bridge to the true home".</span></span></figcaption>
 </figure></div></div>
 
 <div class="pair">
   <figure>
     <img src="images/11-moka-moon.jpg" alt="I Am Home — moka pot">
-    <figcaption><span class="t">I Am Home — Moka</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span></figcaption>
+    <figcaption><span class="t">I Am Home — Moka</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span></figcaption>
   </figure>
   <figure>
     <img src="images/12-coffee-rose.jpg" alt="I Am Home — coffee and rose">
-    <figcaption><span class="t">I Am Home — Coffee &amp; Rose</span><span class="m">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="note">จากถ้วยกาแฟอุ่น ควันสองสายม้วนตัวลอยขึ้น ก่อรูปเป็นดวงจันทร์ที่ห่อหุ้มผืนทะเลไว้ข้างใน แล้วผลิบานปลายเป็นดอกกุหลาบเหนือหมู่เมฆ—ความฝันเล็ก ๆ ที่ผุดขึ้นจากสิ่งสามัญในเช้าวันหนึ่ง</span></figcaption>
+    <figcaption><span class="t">I Am Home — Coffee &amp; Rose</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span><span class="note"><span class="th-only">จากถ้วยกาแฟอุ่น ควันสองสายม้วนตัวลอยขึ้น ก่อรูปเป็นดวงจันทร์ที่ห่อหุ้มผืนทะเลไว้ข้างใน แล้วผลิบานปลายเป็นดอกกุหลาบเหนือหมู่เมฆ—ความฝันเล็ก ๆ ที่ผุดขึ้นจากสิ่งสามัญในเช้าวันหนึ่ง</span><span class="en-only">From a warm cup of coffee, two ribbons of steam curl upward, forming a moon that cradles a sea within, then blossoming into a rose above the clouds — a small dream rising from the ordinary on an ordinary morning.</span></span></figcaption>
   </figure>
 </div>
 
 <div class="plate small"><div class="wrap"><figure>
   <img src="images/13-couple-husky.jpg" alt="Couple">
-  <figcaption><span class="t">Couple</span><span class="m">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span>
-  <span class="note">ภาพเหมือนสุนัขด้วยเส้นหมึกละเอียด ห้อมล้อมด้วยลายพรรณพฤกษาและสัญลักษณ์</span></figcaption>
+  <figcaption><span class="t">Couple</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span>
+  <span class="note"><span class="th-only">ภาพเหมือนสุนัขด้วยเส้นหมึกละเอียด ห้อมล้อมด้วยลายพรรณพฤกษาและสัญลักษณ์</span><span class="en-only">A portrait of dogs in fine ink line, surrounded by botanical patterns and symbols.</span></span></figcaption>
 </figure></div></div>
 
 <!-- ===== ACT V : WAKING ===== -->
 <div class="act wrap">
   <div class="num">V</div>
   <div class="en">Waking</div>
-  <h2>ลืมตาตื่น</h2>
-  <p class="concept">เมื่อใจค่อย ๆ ถูกชำระ สีสันก็กลับคืนมา ความฝันไม่ได้จางหาย แต่แปรเป็นแสง—ดอกไม้บานอยู่ในแจกัน ดวงตะวันละลายลงอย่างช้า ๆ และนาฬิกาทรายก็พร้อมจะถูกพลิกกลับอีกครั้ง นี่คือชั่วขณะก่อนการลืมตา ที่ทุกสิ่งยังพร่างพราวด้วยสีของความหวัง</p>
+  <h2 class="th-only">ลืมตาตื่น</h2>
+  <h2 class="en-only">Waking</h2>
+  <p class="concept"><span class="th-only">เมื่อใจค่อย ๆ ถูกชำระ สีสันก็กลับคืนมา ความฝันไม่ได้จางหาย แต่แปรเป็นแสง—ดอกไม้บานอยู่ในแจกัน ดวงตะวันละลายลงอย่างช้า ๆ และนาฬิกาทรายก็พร้อมจะถูกพลิกกลับอีกครั้ง นี่คือชั่วขณะก่อนการลืมตา ที่ทุกสิ่งยังพร่างพราวด้วยสีของความหวัง</span><span class="en-only">As the heart is slowly washed clear, colour returns. The dream does not fade but turns into light — flowers bloom in a vase, the sun melts slowly down, and the hourglass is ready to be turned once more. This is the moment before waking, when everything still shimmers with the colour of hope.</span></p>
   <div class="rule"></div>
 </div>
 
 <div class="pair">
   <figure>
     <img src="images/16-melting-sun.jpg" alt="Melting Sun">
-    <figcaption><span class="t">Melting Sun</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">ดวงตะวันสีเหลืองหยดยาวลงมาเป็นเส้น ใจกลางภาพคือการประทุของลายเส้นนับไม่ถ้วน—ดอกไม้ ผีเสื้อ เป็ดน้อย และบ้านเห็ด ราวกับความทรงจำทั้งหมดกำลังละลายหลอมรวมเป็นหนึ่งก่อนเลือนหาย</span></figcaption>
+    <figcaption><span class="t">Melting Sun</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">ดวงตะวันสีเหลืองหยดยาวลงมาเป็นเส้น ใจกลางภาพคือการประทุของลายเส้นนับไม่ถ้วน—ดอกไม้ ผีเสื้อ เป็ดน้อย และบ้านเห็ด ราวกับความทรงจำทั้งหมดกำลังละลายหลอมรวมเป็นหนึ่งก่อนเลือนหาย</span><span class="en-only">A yellow sun drips down in long threads; at its centre, an eruption of countless lines — flowers, butterflies, little ducks and a mushroom house — as if every memory were melting into one before it fades.</span></span></figcaption>
   </figure>
   <figure>
     <img src="images/18-hourglass.jpg" alt="Hourglass">
-    <figcaption><span class="t">Hourglass</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="note">นาฬิกาทรายที่ภายในบรรจุทั้งเมือง ดอกเดซี่ บทเพลง และสรรพสัตว์ไว้ด้วยกัน เมื่อทรายไหลจนหมด มันเพียงนิ่งรอวันถูกพลิกกลับ—ภาพแทนของเวลา ความรัก และโอกาสที่หมุนเวียนได้ไม่รู้จบ</span></figcaption>
+    <figcaption><span class="t">Hourglass</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">นาฬิกาทรายที่ภายในบรรจุทั้งเมือง ดอกเดซี่ บทเพลง และสรรพสัตว์ไว้ด้วยกัน เมื่อทรายไหลจนหมด มันเพียงนิ่งรอวันถูกพลิกกลับ—ภาพแทนของเวลา ความรัก และโอกาสที่หมุนเวียนได้ไม่รู้จบ</span><span class="en-only">An hourglass holding within it a whole town, daisies, songs and animals together. When the sand runs out it simply waits, still, to be turned — an image of time, love and opportunity turning endlessly.</span></span></figcaption>
   </figure>
 </div>
 
 <div class="plate"><div class="wrap"><figure>
   <img src="images/17-before-wake-up.jpg" alt="Before Wake Up">
-  <figcaption><span class="t">Before Wake Up</span><span class="m">2565 · สีน้ำและหมึกบนกระดาษ · 50 × 60 ซม.</span>
-  <span class="note">ดอกเยอบีราสีแดงปักอยู่ในแจกัน มีร่างสีเหลืองนั่งเฝ้าเงียบ ๆ เบื้องหลังคือหมู่บ้านบนเนินเขา—ชั่วขณะก่อนตื่น ที่สีสันของโลกจริงเริ่มไหลซึมกลับเข้ามาในความฝัน</span></figcaption>
+  <figcaption><span class="t">Before Wake Up</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 50 × 60 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 50 × 60 cm</span></span>
+  <span class="note"><span class="th-only">ดอกเยอบีราสีแดงปักอยู่ในแจกัน มีร่างสีเหลืองนั่งเฝ้าเงียบ ๆ เบื้องหลังคือหมู่บ้านบนเนินเขา—ชั่วขณะก่อนตื่น ที่สีสันของโลกจริงเริ่มไหลซึมกลับเข้ามาในความฝัน</span><span class="en-only">Red gerberas in a vase, a quiet yellow figure keeping watch, a hillside village behind — the moment before waking, as the colours of the real world begin to seep back into the dream.</span></span></figcaption>
 </figure></div></div>
 
 <!-- ===== CV ===== -->
@@ -270,31 +296,31 @@
   <div class="wrap">
     <div class="label">Curriculum Vitae</div>
     <h2>Danaya Buntasnakul</h2>
-    <div style="color:#9c958a;font-size:.95rem;">ดนย บุญทัศนกุล · เกิด 1 กันยายน 2522 · ทำงานที่กรุงเทพฯ · จิตรกร · นักวาดภาพประกอบ · นักแสดง</div>
+    <div style="color:#9c958a;font-size:.95rem;"><span class="th-only">ดนย บุญทัศนกุล · เกิด 1 กันยายน 2522 · ทำงานที่กรุงเทพฯ · จิตรกร · นักวาดภาพประกอบ · นักแสดง</span><span class="en-only">ดนย บุญทัศนกุล · Born 1 September 1979 · Based in Bangkok · Painter · Illustrator · Performer</span></div>
     <div class="grid">
       <div>
         <h3>Education</h3>
         <ul>
-          <li><span class="yr">2555</span><b>ศิลปมหาบัณฑิต (จิตรกรรม)</b> — มหาวิทยาลัยเชียงใหม่</li>
-          <li><span class="yr">2546</span>ทุนระยะสั้น — L'Accademia di Belle Arti di Firenze, อิตาลี</li>
-          <li><span class="yr">2544</span><b>ศิลปบัณฑิต (จิตรกรรม)</b> — มหาวิทยาลัยศรีนครินทรวิโรฒ</li>
+          <li><span class="yr"><span class="th-only">2555</span><span class="en-only">2012</span></span><b><span class="th-only">ศิลปมหาบัณฑิต (จิตรกรรม)</span><span class="en-only">M.F.A. in Painting</span></b> — <span class="th-only">มหาวิทยาลัยเชียงใหม่</span><span class="en-only">Chiang Mai University</span></li>
+          <li><span class="yr"><span class="th-only">2546</span><span class="en-only">2003</span></span><span class="th-only">ทุนระยะสั้น — L'Accademia di Belle Arti di Firenze, อิตาลี</span><span class="en-only">Short-term scholarship — Accademia di Belle Arti di Firenze, Italy</span></li>
+          <li><span class="yr"><span class="th-only">2544</span><span class="en-only">2001</span></span><b><span class="th-only">ศิลปบัณฑิต (จิตรกรรม)</span><span class="en-only">B.F.A. in Painting</span></b> — <span class="th-only">มหาวิทยาลัยศรีนครินทรวิโรฒ</span><span class="en-only">Srinakharinwirot University</span></li>
         </ul>
         <h3 style="margin-top:36px">Teaching</h3>
         <ul>
-          <li><span class="yr">2564–66</span>อาจารย์พิเศษ วิทยาลัยการออกแบบ ม.รังสิต</li>
-          <li><span class="yr">2549–54</span>อาจารย์ประจำ คณะศิลปกรรมศาสตร์ ม.ธุรกิจบัณฑิตย์</li>
+          <li><span class="yr"><span class="th-only">2564–66</span><span class="en-only">2021–23</span></span><span class="th-only">อาจารย์พิเศษ วิทยาลัยการออกแบบ ม.รังสิต</span><span class="en-only">Visiting Lecturer, College of Design, Rangsit University</span></li>
+          <li><span class="yr"><span class="th-only">2549–54</span><span class="en-only">2006–11</span></span><span class="th-only">อาจารย์ประจำ คณะศิลปกรรมศาสตร์ ม.ธุรกิจบัณฑิตย์</span><span class="en-only">Full-time Lecturer, Faculty of Fine and Applied Arts, Dhurakij Pundit University</span></li>
         </ul>
       </div>
       <div>
         <h3>Solo Exhibitions</h3>
         <ul>
-          <li><span class="yr">2565</span><b>At The End You Must Wake Up</b> — Foxes International, Sky Bar &amp; Lounge, หัวหิน</li>
-          <li><span class="yr">2565</span><b>I Am Home</b> — บ้านศิลปิน, หัวหิน</li>
-          <li><span class="yr">2553</span>ไม่มีชื่อลำดับที่หนึ่ง — แจ่งเมือง Gallery, เชียงใหม่</li>
-          <li><span class="yr">2552</span>Missing Link — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</li>
-          <li><span class="yr">2551</span>ในนามของความรัก — หอศิลป์บ้านศิลปิน, หัวหิน</li>
-          <li><span class="yr">2551</span>ระหว่างเรา — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</li>
-          <li><span class="yr">2550</span>ไม่มีชื่อลำดับที่ศูนย์ — โรงแรมอมารี วอเตอร์เกท, กรุงเทพฯ</li>
+          <li><span class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></span><b>At The End You Must Wake Up</b> — <span class="th-only">Foxes International, Sky Bar &amp; Lounge, หัวหิน</span><span class="en-only">Foxes International, Sky Bar &amp; Lounge, Hua Hin</span></li>
+          <li><span class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></span><b>I Am Home</b> — <span class="th-only">บ้านศิลปิน, หัวหิน</span><span class="en-only">Artist's House, Hua Hin</span></li>
+          <li><span class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></span><span class="th-only">ไม่มีชื่อลำดับที่หนึ่ง — แจ่งเมือง Gallery, เชียงใหม่</span><span class="en-only">Untitled No. 1 — Jaeng Mueang Gallery, Chiang Mai</span></li>
+          <li><span class="yr"><span class="th-only">2552</span><span class="en-only">2009</span></span><span class="th-only">Missing Link — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span><span class="en-only">Missing Link — Pridi Banomyong Institute, Bangkok</span></li>
+          <li><span class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></span><span class="th-only">ในนามของความรัก — หอศิลป์บ้านศิลปิน, หัวหิน</span><span class="en-only">In the Name of Love — Artist's House Gallery, Hua Hin</span></li>
+          <li><span class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></span><span class="th-only">ระหว่างเรา — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span><span class="en-only">Between Us — Pridi Banomyong Institute, Bangkok</span></li>
+          <li><span class="yr"><span class="th-only">2550</span><span class="en-only">2007</span></span><span class="th-only">ไม่มีชื่อลำดับที่ศูนย์ — โรงแรมอมารี วอเตอร์เกท, กรุงเทพฯ</span><span class="en-only">Untitled No. 0 — Amari Watergate Hotel, Bangkok</span></li>
         </ul>
       </div>
     </div>
@@ -304,19 +330,30 @@
 <!-- ===== CONTACT ===== -->
 <section class="contact">
   <div class="wrap">
-    <h2>ติดต่อศิลปิน</h2>
+    <h2><span class="th-only">ติดต่อศิลปิน</span><span class="en-only">Contact the Artist</span></h2>
     <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
     <div class="meta">
       <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
       <a href="mailto:artproducktion@gmail.com">artproducktion@gmail.com</a><br>
-      กรุงเทพมหานคร ประเทศไทย
+      <span class="th-only">กรุงเทพมหานคร ประเทศไทย</span><span class="en-only">Bangkok, Thailand</span>
     </div>
     <div style="margin-top:26px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="cv.html" style="display:inline-block;font-size:.95rem;color:var(--soft);border:1px solid var(--line);padding:10px 22px;border-radius:2px;text-decoration:none">ประวัติผลงาน · Artist CV →</a>
-      <a href="shop.html" style="display:inline-block;font-size:.95rem;color:var(--soft);border:1px solid var(--line);padding:10px 22px;border-radius:2px;text-decoration:none">ผลงานจำหน่าย · Available Works →</a>
+      <a href="cv.html" style="display:inline-block;font-size:.95rem;color:var(--soft);border:1px solid var(--line);padding:10px 22px;border-radius:2px;text-decoration:none"><span class="th-only">ประวัติผลงาน · Artist CV →</span><span class="en-only">Artist CV →</span></a>
+      <a href="shop.html" style="display:inline-block;font-size:.95rem;color:var(--soft);border:1px solid var(--line);padding:10px 22px;border-radius:2px;text-decoration:none"><span class="th-only">ผลงานจำหน่าย · Available Works →</span><span class="en-only">Available Works →</span></a>
     </div>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = b.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
+      try{ localStorage.setItem('portfolioLang', l); }catch(e){}
+    });
+  });
+</script>
 
 </body>
 </html>

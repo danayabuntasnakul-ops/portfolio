@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,41 +8,48 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600&family=Noto+Sans+Thai:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="gallery.css">
+<script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
 </head>
 <body>
 
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-set-lang="th">ไทย</button>
+  <button type="button" data-set-lang="en">EN</button>
+</div>
+
 <!-- ===== HEADER ===== -->
 <header class="head">
-  <div class="kicker">Original Works · จำหน่ายผลงานต้นฉบับ</div>
+  <div class="kicker">Original Works<span class="th-only"> · จำหน่ายผลงานต้นฉบับ</span></div>
   <h1>Dan's <em>Originals</em></h1>
-  <div class="sub">ผลงานต้นฉบับชิ้นเดียวในโลก ลงนามโดยศิลปิน — เลือกชมตามชุดผลงานด้านล่าง</div>
-  <a class="back" href="index.html">← กลับสู่นิทรรศการ</a>
+  <div class="sub"><span class="th-only">ผลงานต้นฉบับชิ้นเดียวในโลก ลงนามโดยศิลปิน — เลือกชมตามชุดผลงานด้านล่าง</span><span class="en-only">One-of-a-kind original works, signed by the artist — browse by series below.</span></div>
+  <a class="back" href="index.html"><span class="th-only">← กลับสู่นิทรรศการ</span><span class="en-only">← Back to the exhibition</span></a>
 </header>
 
 <!-- ===== NOTICE ===== -->
 <div class="notice">
   <div class="wrap">
-    <span><b>จำหน่ายและจัดส่งเฉพาะในประเทศไทย</b></span>
-    <span><b>ผลงานต้นฉบับ</b> ชิ้นเดียว ไม่ใช่ภาพพิมพ์</span>
-    <span>ลงนามโดยศิลปิน · พร้อมใบรับรอง</span>
+    <span><b><span class="th-only">จำหน่ายและจัดส่งเฉพาะในประเทศไทย</span><span class="en-only">Sold &amp; shipped within Thailand only</span></b></span>
+    <span><span class="th-only"><b>ผลงานต้นฉบับ</b> ชิ้นเดียว ไม่ใช่ภาพพิมพ์</span><span class="en-only"><b>Original</b> one-of-a-kind works, not prints</span></span>
+    <span><span class="th-only">ลงนามโดยศิลปิน · พร้อมใบรับรอง</span><span class="en-only">Signed by the artist · with certificate</span></span>
   </div>
 </div>
 
 <!-- ===== COLLECTIONS ===== -->
 <section class="collections">
   <div class="wrap">
-    <div class="sec-label">Collections · ชุดผลงาน</div>
+    <div class="sec-label">Collections<span class="th-only"> · ชุดผลงาน</span></div>
     <div class="cgrid">
 
       <!-- ===== SERIES 1 ===== -->
       <a class="series-card" href="series-at-the-end.html">
         <div class="cover"><img src="images/01-at-the-end.jpg" alt="At The End You Must Wake Up"></div>
         <div class="body">
-          <div class="cap">Series · ชุดที่ 1</div>
+          <div class="cap">Series · <span class="th-only">ชุดที่ 1</span><span class="en-only">No. 1</span></div>
           <h2>At The End You Must Wake Up</h2>
-          <div class="meta">15 ผลงาน · สีน้ำ หมึก บนกระดาษ · 2565</div>
-          <div class="desc">ชุดผลงานว่าด้วยการหลับ ความฝัน และการตื่น — เดินทางผ่านความฝันหนึ่งคืน สู่บ้านที่แท้จริง</div>
-          <span class="enter">ดูผลงานทั้งหมด →</span>
+          <div class="meta"><span class="th-only">15 ผลงาน · สีน้ำ หมึก บนกระดาษ · 2565</span><span class="en-only">15 works · Watercolour &amp; ink on paper · 2022</span></div>
+          <div class="desc"><span class="th-only">ชุดผลงานว่าด้วยการหลับ ความฝัน และการตื่น — เดินทางผ่านความฝันหนึ่งคืน สู่บ้านที่แท้จริง</span><span class="en-only">A series about sleep, dream and waking — a journey through one night's dream to the true home.</span></div>
+          <span class="enter"><span class="th-only">ดูผลงานทั้งหมด →</span><span class="en-only">View all works →</span></span>
         </div>
       </a>
 
@@ -51,10 +58,10 @@
       <div class="series-card soon">
         <div class="cover"><span>Coming soon</span></div>
         <div class="body">
-          <div class="cap">Series · เร็ว ๆ นี้</div>
-          <h2>ชุดผลงานใหม่</h2>
-          <div class="meta">กำลังจะเปิดจำหน่าย</div>
-          <div class="desc">ชุดผลงานต้นฉบับชุดถัดไป กำลังจะมาเร็ว ๆ นี้</div>
+          <div class="cap">Series · <span class="th-only">เร็ว ๆ นี้</span><span class="en-only">Coming soon</span></div>
+          <h2><span class="th-only">ชุดผลงานใหม่</span><span class="en-only">New Series</span></h2>
+          <div class="meta"><span class="th-only">กำลังจะเปิดจำหน่าย</span><span class="en-only">Opening soon</span></div>
+          <div class="desc"><span class="th-only">ชุดผลงานต้นฉบับชุดถัดไป กำลังจะมาเร็ว ๆ นี้</span><span class="en-only">The next series of original works is coming soon.</span></div>
         </div>
       </div>
 
@@ -66,10 +73,21 @@
 <footer class="foot">
   <div class="wrap">
     <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
-    <div><a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a> · กรุงเทพมหานคร ประเทศไทย</div>
-    <div style="margin-top:14px"><a href="index.html">นิทรรศการ</a> · <a href="cv.html">ประวัติศิลปิน</a></div>
+    <div><a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a> · <span class="th-only">กรุงเทพมหานคร ประเทศไทย</span><span class="en-only">Bangkok, Thailand</span></div>
+    <div style="margin-top:14px"><a href="index.html"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibition</span></a> · <a href="cv.html"><span class="th-only">ประวัติศิลปิน</span><span class="en-only">Artist CV</span></a></div>
   </div>
 </footer>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = b.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
+      try{ localStorage.setItem('portfolioLang', l); }catch(e){}
+    });
+  });
+</script>
 
 </body>
 </html>

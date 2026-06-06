@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" data-lang="th">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,6 +26,19 @@
   img{display:block; max-width:100%; height:auto}
   .wrap{max-width:1000px; margin:0 auto; padding:0 40px}
 
+  /* LANGUAGE TOGGLE */
+  [data-lang="th"] .en-only{display:none !important}
+  [data-lang="en"] .th-only{display:none !important}
+  .lang-switch{position:fixed; top:14px; right:14px; z-index:200; display:flex;
+    background:rgba(247,243,236,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid var(--line); border-radius:999px; overflow:hidden;
+    box-shadow:0 4px 16px -8px rgba(38,35,31,.4); font-family:var(--display)}
+  .lang-switch button{border:none; background:none; cursor:pointer; padding:7px 16px;
+    font-size:.82rem; letter-spacing:.06em; color:var(--soft); font-family:inherit}
+  .lang-switch button:hover{color:var(--ink)}
+  [data-lang="th"] .lang-switch [data-set-lang="th"],
+  [data-lang="en"] .lang-switch [data-set-lang="en"]{background:var(--accent); color:#fff}
+
   /* HERO */
   .hero{display:grid; grid-template-columns:0.85fr 1fr; gap:56px; align-items:center;
     min-height:88vh; padding:72px 0}
@@ -44,6 +57,7 @@
   .statement .wrap{padding:72px 40px}
   .statement p{font-family:var(--serif); font-weight:400; font-size:1.3rem; line-height:2;
     max-width:760px; margin:0 auto; text-align:center; color:#39342d}
+  .statement p.en-only{font-family:var(--display); font-style:italic; font-size:1.5rem}
 
   /* SECTIONS */
   section{padding:64px 0}
@@ -89,6 +103,7 @@
   }
   @media print{
     body{background:#fff; font-size:12pt}
+    .lang-switch{display:none}
     .hero{min-height:auto; page-break-after:avoid}
     .contact{background:#fff; color:#000}
     .contact a,.contact h2,.contact .sec-head{color:#000}
@@ -96,8 +111,15 @@
     section{padding:18px 0; page-break-inside:avoid}
   }
 </style>
+<script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
 </head>
 <body>
+
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-set-lang="th">ไทย</button>
+  <button type="button" data-set-lang="en">EN</button>
+</div>
 
 <!-- HERO -->
 <header class="hero wrap">
@@ -106,9 +128,12 @@
     <div class="role">Painter · Illustrator · Performer</div>
     <h1>Danaya<br>Buntasnakul<span class="th">ดนย บุญทัศนกุล</span></h1>
     <div class="meta">
-      <b>เกิด</b> 1 กันยายน 2522 · ประเทศไทย<br>
+      <span class="th-only"><b>เกิด</b> 1 กันยายน 2522 · ประเทศไทย<br>
       <b>ที่อยู่</b> กรุงเทพมหานคร<br>
-      <b>สื่อ</b> จิตรกรรมสีน้ำ · หมึก · ลายเส้น
+      <b>สื่อ</b> จิตรกรรมสีน้ำ · หมึก · ลายเส้น</span>
+      <span class="en-only"><b>Born</b> 1 September 1979 · Thailand<br>
+      <b>Based in</b> Bangkok<br>
+      <b>Media</b> Watercolour · Ink · Drawing</span>
     </div>
   </div>
 </header>
@@ -116,65 +141,66 @@
 <!-- STATEMENT -->
 <div class="statement">
   <div class="wrap">
-    <p>ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างห้วงฝันและความจริง ผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</p>
+    <p class="th-only">ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างห้วงฝันและความจริง ผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</p>
+    <p class="en-only">Working along the thin line between dream and reality — blending watercolour, ink and a musical sense of rhythm until landscapes turn into reveries, and dreams become the place where we dare to face what, awake, we refuse to admit.</p>
   </div>
 </div>
 
 <!-- EDUCATION -->
 <section><div class="wrap">
   <div class="sec-head">Education</div>
-  <div class="sec-sub">การศึกษา</div>
-  <div class="row"><div class="yr">2555</div><div class="body">
-    <div class="title">ศิลปมหาบัณฑิต (จิตรกรรม) · M.F.A. in Painting</div>
-    <div class="where">คณะวิจิตรศิลป์ มหาวิทยาลัยเชียงใหม่</div></div></div>
-  <div class="row"><div class="yr">2546</div><div class="body">
-    <div class="title">ทุนการศึกษาระยะสั้น · Scholarship</div>
-    <div class="where">L'Accademia di Belle Arti di Firenze · ฟลอเรนซ์ ประเทศอิตาลี</div></div></div>
-  <div class="row"><div class="yr">2544</div><div class="body">
-    <div class="title">ศิลปบัณฑิต (จิตรกรรม) · B.F.A. in Painting</div>
-    <div class="where">คณะศิลปกรรมศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ</div></div></div>
+  <div class="sec-sub th-only">การศึกษา</div>
+  <div class="row"><div class="yr"><span class="th-only">2555</span><span class="en-only">2012</span></div><div class="body">
+    <div class="title"><span class="th-only">ศิลปมหาบัณฑิต (จิตรกรรม) · M.F.A. in Painting</span><span class="en-only">M.F.A. in Painting</span></div>
+    <div class="where"><span class="th-only">คณะวิจิตรศิลป์ มหาวิทยาลัยเชียงใหม่</span><span class="en-only">Faculty of Fine Arts, Chiang Mai University</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2546</span><span class="en-only">2003</span></div><div class="body">
+    <div class="title"><span class="th-only">ทุนการศึกษาระยะสั้น · Scholarship</span><span class="en-only">Short-term Scholarship</span></div>
+    <div class="where"><span class="th-only">L'Accademia di Belle Arti di Firenze · ฟลอเรนซ์ ประเทศอิตาลี</span><span class="en-only">Accademia di Belle Arti di Firenze · Florence, Italy</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2544</span><span class="en-only">2001</span></div><div class="body">
+    <div class="title"><span class="th-only">ศิลปบัณฑิต (จิตรกรรม) · B.F.A. in Painting</span><span class="en-only">B.F.A. in Painting</span></div>
+    <div class="where"><span class="th-only">คณะศิลปกรรมศาสตร์ มหาวิทยาลัยศรีนครินทรวิโรฒ</span><span class="en-only">Faculty of Fine Arts, Srinakharinwirot University</span></div></div></div>
 </div></section>
 <div class="divider"></div>
 
 <!-- SOLO -->
 <section><div class="wrap">
   <div class="sec-head">Solo Exhibitions</div>
-  <div class="sec-sub">นิทรรศการเดี่ยว</div>
-  <div class="row"><div class="yr">2565</div><div class="body">
+  <div class="sec-sub th-only">นิทรรศการเดี่ยว</div>
+  <div class="row"><div class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></div><div class="body">
     <div class="title"><em>At The End You Must Wake Up</em></div>
-    <div class="where">Foxes International Restaurant, Sky Bar &amp; Lounge · หัวหิน</div></div></div>
-  <div class="row"><div class="yr">2565</div><div class="body">
+    <div class="where"><span class="th-only">Foxes International Restaurant, Sky Bar &amp; Lounge · หัวหิน</span><span class="en-only">Foxes International Restaurant, Sky Bar &amp; Lounge · Hua Hin</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></div><div class="body">
     <div class="title"><em>I Am Home</em></div>
-    <div class="where">บ้านศิลปิน (Artist's House) · หัวหิน</div></div></div>
-  <div class="row"><div class="yr">2553</div><div class="body">
-    <div class="title"><em>ไม่มีชื่อลำดับที่หนึ่ง</em> (Untitled No. 1)</div>
-    <div class="where">ร้านแจ่งเมือง Gallery &amp; Frame · เชียงใหม่</div></div></div>
-  <div class="row"><div class="yr">2552</div><div class="body">
+    <div class="where"><span class="th-only">บ้านศิลปิน (Artist's House) · หัวหิน</span><span class="en-only">Artist's House · Hua Hin</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></div><div class="body">
+    <div class="title"><span class="th-only"><em>ไม่มีชื่อลำดับที่หนึ่ง</em> (Untitled No. 1)</span><span class="en-only"><em>Untitled No. 1</em></span></div>
+    <div class="where"><span class="th-only">ร้านแจ่งเมือง Gallery &amp; Frame · เชียงใหม่</span><span class="en-only">Jaeng Mueang Gallery &amp; Frame · Chiang Mai</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2552</span><span class="en-only">2009</span></div><div class="body">
     <div class="title"><em>Missing Link</em></div>
-    <div class="where">สถาบันปรีดี พนมยงค์ · กรุงเทพฯ</div></div></div>
-  <div class="row"><div class="yr">2551</div><div class="body">
-    <div class="title"><em>ในนามของความรัก</em> (In the Name of Love)</div>
-    <div class="where">หอศิลป์ บ้านศิลปิน · หัวหิน</div></div></div>
-  <div class="row"><div class="yr">2551</div><div class="body">
-    <div class="title"><em>ระหว่างเรา</em> (Between Us)</div>
-    <div class="where">สถาบันปรีดี พนมยงค์ · กรุงเทพฯ</div></div></div>
-  <div class="row"><div class="yr">2550</div><div class="body">
-    <div class="title"><em>ไม่มีชื่อลำดับที่ศูนย์</em> (Untitled No. 0)</div>
-    <div class="where">โรงแรมอมารี วอเตอร์เกท · กรุงเทพฯ</div></div></div>
-  <div class="note-line">นิทรรศการเดี่ยว 6 ครั้ง ในรอบกว่า 15 ปี — ศิลปินช่วงกลางอาชีพ</div>
+    <div class="where"><span class="th-only">สถาบันปรีดี พนมยงค์ · กรุงเทพฯ</span><span class="en-only">Pridi Banomyong Institute · Bangkok</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></div><div class="body">
+    <div class="title"><span class="th-only"><em>ในนามของความรัก</em> (In the Name of Love)</span><span class="en-only"><em>In the Name of Love</em></span></div>
+    <div class="where"><span class="th-only">หอศิลป์ บ้านศิลปิน · หัวหิน</span><span class="en-only">Artist's House Gallery · Hua Hin</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></div><div class="body">
+    <div class="title"><span class="th-only"><em>ระหว่างเรา</em> (Between Us)</span><span class="en-only"><em>Between Us</em></span></div>
+    <div class="where"><span class="th-only">สถาบันปรีดี พนมยงค์ · กรุงเทพฯ</span><span class="en-only">Pridi Banomyong Institute · Bangkok</span></div></div></div>
+  <div class="row"><div class="yr"><span class="th-only">2550</span><span class="en-only">2007</span></div><div class="body">
+    <div class="title"><span class="th-only"><em>ไม่มีชื่อลำดับที่ศูนย์</em> (Untitled No. 0)</span><span class="en-only"><em>Untitled No. 0</em></span></div>
+    <div class="where"><span class="th-only">โรงแรมอมารี วอเตอร์เกท · กรุงเทพฯ</span><span class="en-only">Amari Watergate Hotel · Bangkok</span></div></div></div>
+  <div class="note-line"><span class="th-only">นิทรรศการเดี่ยว 6 ครั้ง ในรอบกว่า 15 ปี — ศิลปินช่วงกลางอาชีพ</span><span class="en-only">Six solo exhibitions over more than 15 years — a mid-career artist</span></div>
 </div></section>
 <div class="divider"></div>
 
 <!-- GROUP -->
 <section><div class="wrap">
   <div class="sec-head">Selected Group Exhibitions</div>
-  <div class="sec-sub">นิทรรศการกลุ่ม (คัดสรร)</div>
+  <div class="sec-sub th-only">นิทรรศการกลุ่ม (คัดสรร)</div>
   <ul class="plain">
-    <li><span class="yr">2565</span><span class="txt">Union Co-Art Space #2 · Union Mall, กรุงเทพฯ</span></li>
-    <li><span class="yr">2554</span><span class="txt">นิทรรศการศิลปนิพนธ์ จิตรกรรม · พิพิธภัณฑ์ศิลปะ มหาวิทยาลัยเชียงใหม่</span></li>
-    <li><span class="yr">2554</span><span class="txt"><em>Diaries</em> · พิพิธภัณฑ์ศิลปะ มหาวิทยาลัยเชียงใหม่</span></li>
-    <li><span class="yr">2553</span><span class="txt">Multicultural Art Exhibition · สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span></li>
-    <li><span class="yr">2553</span><span class="txt"><em>Weather or Not?</em> · แมวใจดี Gallery, เชียงใหม่</span></li>
+    <li><span class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></span><span class="txt"><span class="th-only">Union Co-Art Space #2 · Union Mall, กรุงเทพฯ</span><span class="en-only">Union Co-Art Space #2 · Union Mall, Bangkok</span></span></li>
+    <li><span class="yr"><span class="th-only">2554</span><span class="en-only">2011</span></span><span class="txt"><span class="th-only">นิทรรศการศิลปนิพนธ์ จิตรกรรม · พิพิธภัณฑ์ศิลปะ มหาวิทยาลัยเชียงใหม่</span><span class="en-only">Painting Thesis Exhibition · Chiang Mai University Art Museum</span></span></li>
+    <li><span class="yr"><span class="th-only">2554</span><span class="en-only">2011</span></span><span class="txt"><em>Diaries</em> · <span class="th-only">พิพิธภัณฑ์ศิลปะ มหาวิทยาลัยเชียงใหม่</span><span class="en-only">Chiang Mai University Art Museum</span></span></li>
+    <li><span class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></span><span class="txt"><span class="th-only">Multicultural Art Exhibition · สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span><span class="en-only">Multicultural Art Exhibition · Pridi Banomyong Institute, Bangkok</span></span></li>
+    <li><span class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></span><span class="txt"><em>Weather or Not?</em> · <span class="th-only">แมวใจดี Gallery, เชียงใหม่</span><span class="en-only">Maew Jai Dee Gallery, Chiang Mai</span></span></li>
   </ul>
 </div></section>
 <div class="divider"></div>
@@ -182,12 +208,12 @@
 <!-- TEACHING -->
 <section><div class="wrap">
   <div class="sec-head">Teaching &amp; Affiliations</div>
-  <div class="sec-sub">การสอนและสังกัด</div>
+  <div class="sec-sub th-only">การสอนและสังกัด</div>
   <ul class="plain">
-    <li><span class="yr">2564–66</span><span class="txt">อาจารย์พิเศษ · วิทยาลัยการออกแบบ มหาวิทยาลัยรังสิต</span></li>
-    <li><span class="yr">2549–54</span><span class="txt">อาจารย์ประจำ · คณะศิลปกรรมศาสตร์ มหาวิทยาลัยธุรกิจบัณฑิตย์</span></li>
-    <li><span class="yr">2547–57</span><span class="txt">สมาชิก กลุ่มศิลปินหัวหิน (Hua Hin Artists Group)</span></li>
-    <li><span class="yr">2543–55</span><span class="txt">สมาชิก คณะนักร้องประสานเสียงสวนพลู (Suanplu Chorus)</span></li>
+    <li><span class="yr"><span class="th-only">2564–66</span><span class="en-only">2021–23</span></span><span class="txt"><span class="th-only">อาจารย์พิเศษ · วิทยาลัยการออกแบบ มหาวิทยาลัยรังสิต</span><span class="en-only">Visiting Lecturer · College of Design, Rangsit University</span></span></li>
+    <li><span class="yr"><span class="th-only">2549–54</span><span class="en-only">2006–11</span></span><span class="txt"><span class="th-only">อาจารย์ประจำ · คณะศิลปกรรมศาสตร์ มหาวิทยาลัยธุรกิจบัณฑิตย์</span><span class="en-only">Full-time Lecturer · Faculty of Fine and Applied Arts, Dhurakij Pundit University</span></span></li>
+    <li><span class="yr"><span class="th-only">2547–57</span><span class="en-only">2004–14</span></span><span class="txt"><span class="th-only">สมาชิก กลุ่มศิลปินหัวหิน (Hua Hin Artists Group)</span><span class="en-only">Member, Hua Hin Artists Group</span></span></li>
+    <li><span class="yr"><span class="th-only">2543–55</span><span class="en-only">2000–12</span></span><span class="txt"><span class="th-only">สมาชิก คณะนักร้องประสานเสียงสวนพลู (Suanplu Chorus)</span><span class="en-only">Member, Suanplu Chorus</span></span></li>
   </ul>
 </div></section>
 <div class="divider"></div>
@@ -195,11 +221,11 @@
 <!-- PERFORMANCE -->
 <section><div class="wrap">
   <div class="sec-head">Performance Practice</div>
-  <div class="sec-sub">งานการแสดง (อาชีพคู่ขนาน)</div>
+  <div class="sec-sub th-only">งานการแสดง (อาชีพคู่ขนาน)</div>
   <ul class="plain">
-    <li><span class="yr">ปัจจุบัน</span><span class="txt">นักแสดงละครเวทีและนักร้องอิสระ</span></li>
-    <li><span class="yr">2550–61</span><span class="txt">Anatta Theatre Company — <em>บันทึกอิสรา</em>, <em>มังกรลัดเกล็ด</em>, <em>พระเจ้าช้างเผือก</em></span></li>
-    <li><span class="yr">2543–55</span><span class="txt">คณะนักร้องประสานเสียงสวนพลู — การแสดงระดับนานาชาติ</span></li>
+    <li><span class="yr"><span class="th-only">ปัจจุบัน</span><span class="en-only">Present</span></span><span class="txt"><span class="th-only">นักแสดงละครเวทีและนักร้องอิสระ</span><span class="en-only">Freelance stage actor and singer</span></span></li>
+    <li><span class="yr"><span class="th-only">2550–61</span><span class="en-only">2007–18</span></span><span class="txt">Anatta Theatre Company — <em>บันทึกอิสรา</em>, <em>มังกรลัดเกล็ด</em>, <em>พระเจ้าช้างเผือก</em></span></li>
+    <li><span class="yr"><span class="th-only">2543–55</span><span class="en-only">2000–12</span></span><span class="txt"><span class="th-only">คณะนักร้องประสานเสียงสวนพลู — การแสดงระดับนานาชาติ</span><span class="en-only">Suanplu Chorus — international performances</span></span></li>
   </ul>
 </div></section>
 <div class="divider"></div>
@@ -207,13 +233,14 @@
 <!-- AWARDS -->
 <section><div class="wrap">
   <div class="sec-head">Honours &amp; Awards</div>
-  <div class="sec-sub">รางวัลขับร้องประสานเสียงระดับนานาชาติ</div>
+  <div class="sec-sub th-only">รางวัลขับร้องประสานเสียงระดับนานาชาติ</div>
+  <div class="sec-sub en-only" style="font-family:var(--display);font-style:italic;color:var(--accent);font-size:1.15rem">International Choral Awards</div>
   <ul class="plain">
-    <li><span class="yr">2555</span><span class="txt">เหรียญเงิน 2 รายการ (Folklore Sinic · Musica Contemporanea) · World Choir Games VI, Cincinnati, USA</span></li>
-    <li><span class="yr">2553</span><span class="txt">ผู้แทนวัฒนธรรมไทย · UNESCO Cultural Week, Paris, France</span></li>
-    <li><span class="yr">2551</span><span class="txt">เหรียญเงิน (Musica Contemporanea) · เหรียญทองแดง (Folklore Sinic) · World Choir Games IV, Graz, Austria</span></li>
-    <li><span class="yr">2549</span><span class="txt">เหรียญทองแดง (Folklore A Cappella) · World Choir Games III, Xiamen, China</span></li>
-    <li><span class="yr">2547</span><span class="txt">เหรียญเงิน (Folklore A Cappella Open) · Choir Olympics, Bremen, Germany</span></li>
+    <li><span class="yr"><span class="th-only">2555</span><span class="en-only">2012</span></span><span class="txt"><span class="th-only">เหรียญเงิน 2 รายการ</span><span class="en-only">Two Silver Medals</span> (Folklore Sinic · Musica Contemporanea) · World Choir Games VI, Cincinnati, USA</span></li>
+    <li><span class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></span><span class="txt"><span class="th-only">ผู้แทนวัฒนธรรมไทย</span><span class="en-only">Thai cultural delegate</span> · UNESCO Cultural Week, Paris, France</span></li>
+    <li><span class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></span><span class="txt"><span class="th-only">เหรียญเงิน (Musica Contemporanea) · เหรียญทองแดง (Folklore Sinic)</span><span class="en-only">Silver Medal (Musica Contemporanea) · Bronze Medal (Folklore Sinic)</span> · World Choir Games IV, Graz, Austria</span></li>
+    <li><span class="yr"><span class="th-only">2549</span><span class="en-only">2006</span></span><span class="txt"><span class="th-only">เหรียญทองแดง (Folklore A Cappella)</span><span class="en-only">Bronze Medal (Folklore A Cappella)</span> · World Choir Games III, Xiamen, China</span></li>
+    <li><span class="yr"><span class="th-only">2547</span><span class="en-only">2004</span></span><span class="txt"><span class="th-only">เหรียญเงิน (Folklore A Cappella Open)</span><span class="en-only">Silver Medal (Folklore A Cappella Open)</span> · Choir Olympics, Bremen, Germany</span></li>
   </ul>
 </div></section>
 
@@ -221,15 +248,26 @@
 <section class="contact">
   <div class="wrap">
     <div class="sec-head">Contact</div>
-    <h2>ติดต่อศิลปิน</h2>
+    <h2><span class="th-only">ติดต่อศิลปิน</span><span class="en-only">Contact the Artist</span></h2>
     <div class="lines">
       <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
       <a href="mailto:artproducktion@gmail.com">artproducktion@gmail.com</a><br>
-      กรุงเทพมหานคร · ประเทศไทย
+      <span class="th-only">กรุงเทพมหานคร · ประเทศไทย</span><span class="en-only">Bangkok · Thailand</span>
     </div>
-    <a class="backlink" href="index.html">← ดูผลงานชุด At The End You Must Wake Up</a>
+    <a class="backlink" href="index.html"><span class="th-only">← ดูผลงานชุด At The End You Must Wake Up</span><span class="en-only">← View the series At The End You Must Wake Up</span></a>
   </div>
 </section>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = b.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
+      try{ localStorage.setItem('portfolioLang', l); }catch(e){}
+    });
+  });
+</script>
 
 </body>
 </html>

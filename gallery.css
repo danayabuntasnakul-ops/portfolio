@@ -89,7 +89,7 @@ a{color:var(--accent)}
   text-transform:uppercase; color:var(--faint); margin-bottom:14px}
 .series-card h2{font-family:var(--display); font-weight:500; font-size:1.6rem; line-height:1.15; letter-spacing:-.01em;
   display:inline; text-decoration:underline; text-decoration-color:transparent; text-underline-offset:5px; transition:text-decoration-color .2s}
-.series-card:hover h2{text-decoration-color:var(--ink)}
+.series-card:not(.soon):hover h2{text-decoration-color:var(--ink)}
 .series-card .meta{font-family:var(--display); font-weight:400; font-size:.74rem; letter-spacing:.12em;
   text-transform:uppercase; color:var(--faint); margin-top:14px}
 .series-card .desc{font-size:.96rem; font-weight:300; color:var(--soft); line-height:1.75; margin-top:16px; max-width:440px}

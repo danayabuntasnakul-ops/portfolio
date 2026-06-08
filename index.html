@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="p:domain_verify" content="67861b23f2593aaebbae70b7e88a2a6b"/>
-<title>ดนย บุญทัศนกุล — At The End You Must Wake Up</title>
+<title>ดนย บุญทัศนกุล — นิทรรศการ · Exhibitions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600&family=Sarabun:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
     background:var(--paper); color:var(--ink);
     font-family:var(--sans); font-weight:300; line-height:1.85;
     -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+    min-height:100vh; display:flex; flex-direction:column;
   }
   img{display:block; max-width:100%; height:auto}
   .wrap{max-width:1060px; margin:0 auto; padding:0 32px}
@@ -40,7 +41,7 @@
   [data-lang="th"] .lang-switch [data-set-lang="th"],
   [data-lang="en"] .lang-switch [data-set-lang="en"]{background:var(--accent); color:#fff}
 
-  /* SITE NAV (jump between pages) */
+  /* SITE NAV */
   .site-nav{position:fixed; top:14px; left:14px; z-index:200; display:flex; align-items:center;
     background:rgba(246,242,234,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
     border:1px solid var(--line); border-radius:999px; overflow:hidden;
@@ -50,95 +51,43 @@
   .site-nav a + a{border-left:1px solid var(--line)}
   .site-nav a:hover{color:var(--ink)}
   .site-nav a.active{background:var(--accent); color:#fff}
-  @media print{.site-nav{display:none}}
   @media(max-width:560px){
     .site-nav a{padding:6px 11px; font-size:.76rem; letter-spacing:.02em}
     .lang-switch button{padding:6px 12px}
   }
 
-  /* ---------- COVER ---------- */
-  .cover{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
-    text-align:center; padding:60px 32px; position:relative}
-  .cover .kicker{font-family:var(--display); font-style:italic; font-size:1.1rem; color:var(--soft);
-    letter-spacing:.18em; text-transform:uppercase; margin-bottom:26px}
-  .cover figure{max-width:760px; width:100%; box-shadow:0 24px 60px -28px rgba(40,34,26,.55); margin-bottom:38px}
-  .cover h1{font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,6vw,4.6rem);
-    line-height:1.04; letter-spacing:.005em}
-  .cover h1 em{font-style:italic; display:block; color:var(--accent)}
-  .cover .artist{font-family:var(--serif); font-weight:400; font-size:1.25rem; margin-top:22px; letter-spacing:.04em}
-  .cover .sub{font-size:.95rem; color:var(--soft); margin-top:8px; letter-spacing:.05em}
-  .scroll-cue{position:absolute; bottom:26px; font-size:.78rem; color:var(--faint); letter-spacing:.25em; text-transform:uppercase}
+  /* HUB */
+  .hub-head{text-align:center; padding:120px 32px 16px}
+  .hub-head .kicker{font-family:var(--display); font-style:italic; font-size:1.05rem; color:var(--soft);
+    letter-spacing:.18em; text-transform:uppercase; margin-bottom:18px}
+  .hub-head h1{font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,6vw,4rem); line-height:1.05}
+  .hub-head .artist{font-family:var(--serif); font-weight:400; font-size:1.15rem; margin-top:18px; letter-spacing:.04em}
+  .hub-head .intro{font-family:var(--serif); font-weight:300; font-size:1.05rem; line-height:1.95;
+    max-width:600px; margin:20px auto 0; color:#3a352e}
 
-  /* ---------- STATEMENT ---------- */
-  section{padding:96px 0}
-  .statement{background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-  .statement .lead{font-family:var(--serif); font-weight:300; font-size:1.5rem; line-height:1.9; max-width:760px}
-  .statement p{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:720px; margin-top:1.4em; color:#3a352e}
-  .label{font-family:var(--display); font-style:italic; font-size:1rem; letter-spacing:.18em; text-transform:uppercase;
-    color:var(--accent); margin-bottom:30px}
+  .shows{flex:1; padding:56px 0 96px}
+  .show-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; max-width:1000px; margin:0 auto}
+  .show-card{display:block; text-decoration:none; color:inherit; group:card}
+  .show-card figure{overflow:hidden; box-shadow:0 18px 44px -26px rgba(40,34,26,.5); aspect-ratio:4/3; background:var(--paper2)}
+  .show-card img{width:100%; height:100%; object-fit:cover; transition:transform .6s ease}
+  .show-card:hover img{transform:scale(1.04)}
+  .show-card .meta{padding:22px 4px 0; text-align:center}
+  .show-card .t{font-family:var(--display); font-style:italic; font-size:1.7rem; color:var(--ink); line-height:1.15; display:block}
+  .show-card .sub{display:block; margin-top:8px; font-size:.92rem; color:var(--soft); letter-spacing:.02em}
+  .show-card .go{display:inline-block; margin-top:14px; font-family:var(--display); font-size:.92rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--line); padding-bottom:2px}
+  .show-card:hover .go{color:var(--ink)}
 
-  /* ---------- ACT DIVIDER ---------- */
-  .act{text-align:center; padding:120px 0 80px}
-  .act .num{font-family:var(--display); font-size:2.4rem; font-style:italic; color:var(--faint); letter-spacing:.1em}
-  .act .en{font-family:var(--display); font-size:.95rem; letter-spacing:.35em; text-transform:uppercase; color:var(--soft); margin:14px 0 6px}
-  .act h2{font-family:var(--serif); font-weight:500; font-size:clamp(1.7rem,4vw,2.5rem); letter-spacing:.02em}
-  .act h2.en-only{font-family:var(--display)}
-  .act .concept{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:680px;
-    margin:34px auto 0; color:#3a352e; text-align:left}
-  .rule{width:54px; height:1px; background:var(--accent); margin:34px auto 0}
+  /* FOOTER */
+  .foot{text-align:center; background:var(--paper2); border-top:1px solid var(--line); padding:56px 32px}
+  .foot .who{font-family:var(--serif); font-size:1.05rem; margin-bottom:8px}
+  .foot .meta{font-size:.92rem; color:var(--soft); line-height:1.9}
+  .foot a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line)}
 
-  /* ---------- PLATES ---------- */
-  .plate{padding:56px 0}
-  .plate figure{margin:0 auto; max-width:880px}
-  .plate.small figure{max-width:560px}
-  .plate img{margin:0 auto; box-shadow:0 18px 44px -26px rgba(40,34,26,.5)}
-  figcaption{margin-top:20px; text-align:center; font-size:.92rem; color:var(--soft); line-height:1.7}
-  figcaption .t{font-family:var(--display); font-style:italic; font-size:1.25rem; color:var(--ink); letter-spacing:.01em}
-  figcaption .m{display:block; margin-top:4px; font-size:.86rem; color:var(--faint); letter-spacing:.02em}
-  figcaption .note{display:block; margin-top:10px; font-family:var(--serif); font-size:.98rem; color:var(--soft); max-width:560px; margin-left:auto; margin-right:auto}
-
-  .pair{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:start; max-width:980px; margin:56px auto}
-  .pair figure{max-width:none}
-
-  /* ---------- CV ---------- */
-  .cv{background:var(--ink); color:#e9e2d4}
-  .cv .label{color:#caa86a}
-  .cv h2{font-family:var(--display); font-weight:500; font-size:2.2rem; margin-bottom:10px}
-  .cv .grid{display:grid; grid-template-columns:1fr 1fr; gap:48px 64px; margin-top:48px}
-  .cv h3{font-family:var(--display); font-style:italic; font-size:1.15rem; letter-spacing:.08em; color:#caa86a;
-    margin-bottom:16px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,.12)}
-  .cv ul{list-style:none}
-  .cv li{font-size:.95rem; font-weight:300; line-height:1.55; margin-bottom:13px; color:#d8d0c1}
-  .cv li b{color:#fff; font-weight:500}
-  .cv li span{color:#8f897d}
-  .cv .yr{color:#caa86a; font-weight:400; margin-right:8px}
-
-  /* ---------- CONTACT ---------- */
-  .contact{text-align:center; background:var(--paper2); border-top:1px solid var(--line)}
-  .contact h2{font-family:var(--display); font-style:italic; font-size:2rem; margin-bottom:24px}
-  .contact a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line)}
-  .contact .who{font-family:var(--serif); font-size:1.15rem; margin-bottom:8px}
-  .contact .meta{font-size:.95rem; color:var(--soft); line-height:2}
-
-  /* ---------- RESPONSIVE ---------- */
   @media(max-width:720px){
     .wrap{padding:0 22px}
-    section{padding:64px 0}
-    .pair{grid-template-columns:1fr; gap:40px}
-    .cv .grid{grid-template-columns:1fr; gap:36px}
-    .statement .lead{font-size:1.3rem}
-  }
-
-  /* ---------- PRINT (Save as PDF) ---------- */
-  @media print{
-    body{background:#fff}
-    .lang-switch,.scroll-cue{display:none}
-    section,.act,.plate{padding:24px 0; page-break-inside:avoid}
-    .cover{min-height:auto; page-break-after:always}
-    .plate img,.cover figure{box-shadow:none}
-    .cv{background:#fff; color:#000}
-    .cv li,.cv li b,.cv h3{color:#000}
-    .statement,.contact{background:#fff}
+    .hub-head{padding-top:96px}
+    .show-grid{grid-template-columns:1fr; gap:48px}
   }
 </style>
 <script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
@@ -147,7 +96,7 @@
 
 <!-- SITE NAV -->
 <nav class="site-nav" aria-label="ไปยังหน้าอื่น">
-  <a href="index.html" class="active" aria-current="page"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibition</span></a>
+  <a href="index.html" class="active" aria-current="page"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibitions</span></a>
   <a href="shop.html"><span class="th-only">ต้นฉบับ</span><span class="en-only">Originals</span></a>
   <a href="cv.html"><span class="th-only">ประวัติ</span><span class="en-only">CV</span></a>
 </nav>
@@ -158,210 +107,49 @@
   <button type="button" data-set-lang="en">EN</button>
 </div>
 
-<!-- ===== COVER ===== -->
-<header class="cover">
-  <div class="kicker"><span class="th-only">นิทรรศการเดี่ยว · ชุดผลงาน</span><span class="en-only">Solo Exhibition · Series</span></div>
-  <figure><img src="images/01-at-the-end.jpg" alt="At The End You Must Wake Up"></figure>
-  <h1>At The End<br><em>You Must Wake Up</em></h1>
+<!-- ===== HUB HEADER ===== -->
+<header class="hub-head">
+  <div class="kicker"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibitions</span></div>
+  <h1><span class="th-only">ดนย บุญทัศนกุล</span><span class="en-only">Danaya Buntasnakul</span></h1>
   <div class="artist">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
-  <div class="sub"><span class="th-only">จิตรกรรมสีน้ำ หมึก และลายเส้นบนกระดาษ</span><span class="en-only">Watercolour, ink and drawing on paper</span></div>
-  <div class="scroll-cue"><span class="th-only">เลื่อนลง</span><span class="en-only">Scroll</span></div>
+  <p class="intro"><span class="th-only">รวมนิทรรศการของศิลปิน — เลือกชุดผลงานที่ต้องการเข้าชม</span><span class="en-only">A collection of the artist's exhibitions — choose a body of work to view.</span></p>
 </header>
 
-<!-- ===== STATEMENT ===== -->
-<section class="statement">
+<!-- ===== EXHIBITION CHOICES ===== -->
+<main class="shows">
   <div class="wrap">
-    <div class="label">Artist Statement<span class="th-only"> · แนวคิดศิลปิน</span></div>
-    <p class="lead"><span class="th-only">ดนย บุญทัศนกุล ทำงานอยู่บนเส้นแบ่งบาง ๆ ระหว่างการหลับและการตื่น ระหว่างโลกที่เรามองเห็นกับโลกที่เราเพียงรู้สึกถึง</span><span class="en-only">Danaya Buntasnakul works along the thin line between sleeping and waking — between the world we see and the world we only feel.</span></p>
-    <p><span class="th-only">เขาผสมสีน้ำ หมึก และจังหวะแบบดนตรีเข้าด้วยกัน จนภูมิทัศน์กลายเป็นห้วงความฝัน และความฝันกลายเป็นที่ที่เรากล้าเผชิญสิ่งที่ตื่นอยู่เรากลับไม่ยอมรับ</span><span class="en-only">He blends watercolour, ink and a musical sense of rhythm until landscapes become reveries, and dreams become the place where we dare to face what, awake, we refuse to admit.</span></p>
-    <p><span class="th-only">เขาเรียนจิตรกรรมที่มหาวิทยาลัยเชียงใหม่ (ศิลปมหาบัณฑิต) และเคยศึกษาที่ L'Accademia di Belle Arti di Firenze ประเทศอิตาลี ผ่านนิทรรศการเดี่ยว 6 ครั้งในรอบ 15 ปี งานของเขาวนเวียนอยู่กับความใกล้ชิด การพลัดพราก และโอกาสที่หมุนกลับมาใหม่ได้เสมอ—เหมือนนาฬิกาทรายที่เพียงรอวันถูกพลิก</span><span class="en-only">He studied painting at Chiang Mai University (M.F.A.) and at the Accademia di Belle Arti di Firenze in Italy. Across six solo exhibitions over fifteen years, his work returns again and again to intimacy, separation, and the chance that can always come around once more — like an hourglass simply waiting to be turned.</span></p>
-    <p><span class="th-only">นอกจากเป็นจิตรกร เขายังเป็นนักแสดงละครเวทีและนักร้องประสานเสียงที่ได้รับรางวัลระดับนานาชาติ ประสบการณ์บนเวทีและในเสียงเพลงไหลกลับเข้ามาในงานวาด ในรูปของจังหวะ การฟัง และการมองอย่างช้า ๆ</span><span class="en-only">Beyond painting, he is a stage actor and an internationally awarded choral singer. His experience on stage and in song flows back into his drawing as rhythm, as listening, and as a slow way of seeing.</span></p>
-  </div>
-</section>
+    <div class="show-grid">
 
-<!-- ===== ACT I ===== -->
-<div class="act wrap">
-  <div class="num">I</div>
-  <div class="en">Falling Asleep</div>
-  <h2 class="th-only">เคลิ้มหลับ</h2>
-  <h2 class="en-only">Falling Asleep</h2>
-  <p class="concept"><span class="th-only">นิทรรศการนี้ขอชวนผู้ชมเดินผ่านความฝันหนึ่งคืน เริ่มจากภาพของสุนัขจิ้งจอกที่ขดตัวหลับกลางทุ่ง—ภาพแทนของจิตใจที่กำลังพักผ่อนเพื่อจะหายดี ก้อนเมฆแปลงร่างเป็นสัตว์ ปราสาทเล็ก ๆ ตั้งอยู่บนหลังของมัน ทุกอย่างค่อย ๆ จมลงสู่ห้วงฝัน</span><span class="en-only">This exhibition invites you to walk through a single night's dream. It begins with a fox curled asleep in a field — an image of a mind at rest, healing. Clouds shift into animals, a small castle rests on their backs, and everything sinks slowly into the dream.</span></p>
-  <div class="rule"></div>
-</div>
+      <a class="show-card" href="at-the-end.html">
+        <figure><img src="images/01-at-the-end.jpg" alt="At The End You Must Wake Up"></figure>
+        <div class="meta">
+          <span class="t">At The End You Must Wake Up</span>
+          <span class="sub"><span class="th-only">จิตรกรรมสีน้ำ หมึก และลายเส้นบนกระดาษ</span><span class="en-only">Watercolour, ink and drawing on paper</span></span>
+          <span class="go"><span class="th-only">เข้าชม</span><span class="en-only">View</span></span>
+        </div>
+      </a>
 
-<!-- ===== ACT II : THE DREAM ===== -->
-<div class="act wrap">
-  <div class="num">II</div>
-  <div class="en">The Dream</div>
-  <h2 class="th-only">ในความฝัน</h2>
-  <h2 class="en-only">The Dream</h2>
-  <p class="concept"><span class="th-only"><i>At The End You Must Wake Up</i> คือบันทึกของเรื่องที่เกิดขึ้นแล้วผ่านไป แต่ส่วนลึกของใจยังไม่ยอมปล่อยความรู้สึกที่อยู่นอกเหนือการควบคุม การวาดชุดนี้จึงเป็นการบำบัดตัวเอง—กล่อมใจให้หลับอยู่ในฝัน จนถึงวันหนึ่งที่ใจถูกชำระจนใส และพร้อมจะลืมตาตื่นขึ้นอีกครั้ง</span><span class="en-only"><i>At The End You Must Wake Up</i> is a record of things that happened and passed, while some deep part of the heart still refuses to release feelings beyond its control. Making this series became a way of healing — lulling the heart to sleep within the dream, until the day it is washed clear and ready to open its eyes again.</span></p>
-  <div class="rule"></div>
-</div>
+      <a class="show-card" href="doi-suthep.html">
+        <figure><img src="images/doi/doi-01.jpg" alt="ดอยสุเทพและเพื่อน · Doi Suthep and Friends"></figure>
+        <div class="meta">
+          <span class="t"><span class="th-only">ดอยสุเทพและเพื่อน</span><span class="en-only">Doi Suthep and Friends</span></span>
+          <span class="sub"><span class="th-only">สีน้ำมันและสีอะคริลิคบนผ้าใบ · ชุดวิทยานิพนธ์</span><span class="en-only">Oil and acrylic on canvas · Thesis series</span></span>
+          <span class="go"><span class="th-only">เข้าชม</span><span class="en-only">View</span></span>
+        </div>
+      </a>
 
-<div class="pair">
-  <figure>
-    <img src="images/02-house-of-dream.jpg" alt="House of Dream">
-    <figcaption><span class="t">House of Dream</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">หอยทากค่อย ๆ เคลื่อนผ่านท้องทุ่ง แบกถ้วยชาที่ภายในมีบ้านหลังเล็กบนเนินเขาเขียว และดอกไม้สีชมพูดอกโตชูก้านขึ้นฟ้า—บ้านในฝันที่เดินทางไปกับเราทุกหนแห่ง</span><span class="en-only">A snail drifts across the fields carrying a teacup that holds a little house on a green hill, a large pink flower reaching for the sky — the dream-home that travels with us everywhere.</span></span></figcaption>
-  </figure>
-  <figure>
-    <img src="images/03-just-two-of-us.jpg" alt="Just Two of Us">
-    <figcaption><span class="t">Just Two of Us</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">บ้านหินสไตล์ทัสคานีตั้งอยู่ใต้ท้องฟ้าที่หมุนวนแบบแวนโก๊ะ บนหอคอยมีนาฬิกาทรายประดับ รายล้อมด้วยแมว บทเพลง และดวงจันทร์—ความทรงจำจากอิตาลีที่ยังหมุนไปกับจังหวะของเวลา</span><span class="en-only">A Tuscan stone house beneath a sky swirling like Van Gogh's, an hourglass set upon its tower, surrounded by cats, songs and the moon — memories of Italy still turning with the rhythm of time.</span></span></figcaption>
-  </figure>
-</div>
-
-<div class="pair">
-  <figure>
-    <img src="images/04-our-song.jpg" alt="Our Song">
-    <figcaption><span class="t">Our Song</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">สุนัขจิ้งจอกหวนกลับมาอีกครั้ง คราวนี้ห้อมล้อมด้วยโน้ตเพลง เป็ด และดวงจันทร์—บทเพลงที่โอบกอดความฝันเอาไว้</span><span class="en-only">The fox returns once more, now encircled by musical notes, ducks and the moon — a song that holds the dream in its arms.</span></span></figcaption>
-  </figure>
-  <figure>
-    <img src="images/05-song-of-sun-and-moon.jpg" alt="Song of Sun and Moon">
-    <figcaption><span class="t">Song of Sun and Moon</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">ใบหน้าของดวงอาทิตย์และดวงจันทร์หลอมรวมเป็นหนึ่งเดียว ลอยอยู่ท่ามกลางดอกไม้และสรรพสัตว์ในห้วงฝัน—สองขั้วที่อยู่ร่วมกันอย่างอ่อนโยน</span><span class="en-only">The faces of sun and moon melt into one, floating among the flowers and creatures of the dream — two opposites resting gently together.</span></span></figcaption>
-  </figure>
-</div>
-
-<!-- ===== ACT III : THE MECHANISM ===== -->
-<div class="act wrap">
-  <div class="num">III</div>
-  <div class="en">The Mechanism</div>
-  <h2 class="th-only">กลไกของนาฬิกาทราย</h2>
-  <h2 class="en-only">The Mechanism</h2>
-  <p class="concept"><span class="th-only">โอกาสผ่านมาแล้วผ่านไป หลายเรื่องเริ่มต้นและจบลงอย่างไม่มีเยื่อใย เหมือนความฝันที่เราไม่อยากลืมตาตื่น นาฬิกาทรายมีความหมายมากกว่าเครื่องนับเวลาถอยหลัง เมื่อทรายหมด มันเพียงนิ่งรอวันถูกพลิกกลับ เพื่อเริ่มต้นใหม่อย่างไม่รู้จบ—เช่นเดียวกับความรัก ความสัมพันธ์ ชีวิต และโอกาส งานหมึกในองก์นี้คือ "ภายใน" ของนาฬิกาเรือนนั้น: เส้นที่ถักทอกันแน่นจนเวลากลายเป็นวัฏจักร</span><span class="en-only">Chances come and go; many things begin and end without sentiment, like a dream we would rather not wake from. The hourglass means more than a countdown. When the sand runs out it simply waits, still, to be turned over — beginning again, endlessly: like love, like relationships, like life and opportunity. The ink works in this act are the "interior" of that hourglass: lines woven so tightly that time itself becomes a cycle.</span></p>
-  <div class="rule"></div>
-</div>
-
-<div class="plate"><div class="wrap"><figure>
-  <img src="images/06-love-and-peace.jpg" alt="Love and Peace">
-  <figcaption><span class="t">Love and Peace</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span>
-  <span class="note"><span class="th-only">นกพิราบขาวที่ก่อตัวขึ้นจาก "ที่ว่าง" ท่ามกลางหมึกอันแน่นหนา—ความสงบที่โผล่พ้นจากความวุ่นวาย</span><span class="en-only">A white dove formed from the "empty space" within dense ink — peace emerging out of turmoil.</span></span></figcaption>
-</figure></div></div>
-
-<div class="pair">
-  <figure>
-    <img src="images/08-sun-and-moon.jpg" alt="Sun and Moon">
-    <figcaption><span class="t">Sun and Moon</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 28 × 21 ซม.</span><span class="en-only">2022 · Ink on paper · 28 × 21 cm</span></span></figcaption>
-  </figure>
-  <figure>
-    <img src="images/07-we-meet-in-the-sky.jpg" alt="We Meet in the Sky">
-    <figcaption><span class="t">We Meet in the Sky</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span></figcaption>
-  </figure>
-</div>
-
-<div class="plate"><div class="wrap"><figure>
-  <img src="images/09-missing-you.jpg" alt="Missing You">
-  <figcaption><span class="t">Missing You</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 28 × 42 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 28 × 42 cm</span></span>
-  <span class="note"><span class="th-only">งานหมึกแน่นเต็มผืน พลังงานสูง สีสันปะทุ—ลายเซ็นของชุด New Chapter ที่ความคิดถึงกลายเป็นเขาวงกต</span><span class="en-only">Dense, high-energy ink with bursting colour — a signature of the New Chapter series, where longing becomes a labyrinth.</span></span></figcaption>
-</figure></div></div>
-
-<!-- ===== ACT IV : THE TRUE HOME ===== -->
-<div class="act wrap">
-  <div class="num">IV</div>
-  <div class="en">The True Home</div>
-  <h2 class="th-only">บ้านที่แท้จริง</h2>
-  <h2 class="en-only">The True Home</h2>
-  <p class="concept"><span class="th-only">OSHO ว่าไว้ว่า ปัญญาญาณเปรียบเหมือนสะพานที่เชื่อมทางให้เราเดินกลับสู่บ้านที่แท้จริง—บ้านที่มีอยู่มาตลอด ตั้งอยู่ตรงนั้นก่อนเราเกิดและหลังเราตาย เราไม่ใช่เจ้าของบ้าน เราเป็นส่วนหนึ่งของมัน สะพานที่พาไปสู่บ้านนั้นซ่อนอยู่ทั่วทุกหนแห่ง—ในแววตาของสุนัขใต้แดด ในควันบาง ๆ จากถ้วยกาแฟ หรือแม้แต่ในภาพวาดสักภาพ ลายเส้นหมึกบนกระดาษชุดนี้ คือสิ่งที่ศิลปินค้นพบแล้วนำกลับมาเล่า</span><span class="en-only">Osho said that intuition is like a bridge that leads us back to our true home — a home that has always been there, standing before we are born and after we die. We do not own the home; we are part of it. The bridge to it hides everywhere — in the eyes of a dog in the sun, in the thin steam rising from a cup of coffee, even in a single painting. These ink drawings on paper are what the artist found there and brought back to tell.</span></p>
-  <div class="rule"></div>
-</div>
-
-<div class="plate"><div class="wrap"><figure>
-  <img src="images/10-stone-bridge.jpg" alt="สะพานหิน / I Am Home">
-  <figcaption><span class="t">I Am Home — Bridge</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span>
-  <span class="note"><span class="th-only">ซุ้มสะพานหินใต้ท้องฟ้าที่ไหวเอน—ภาพแทนของ "สะพานสู่บ้านที่แท้จริง"</span><span class="en-only">A stone bridge arch beneath a swaying sky — an image of the "bridge to the true home".</span></span></figcaption>
-</figure></div></div>
-
-<div class="pair">
-  <figure>
-    <img src="images/11-moka-moon.jpg" alt="I Am Home — moka pot">
-    <figcaption><span class="t">I Am Home — Moka</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span></figcaption>
-  </figure>
-  <figure>
-    <img src="images/12-coffee-rose.jpg" alt="I Am Home — coffee and rose">
-    <figcaption><span class="t">I Am Home — Coffee &amp; Rose</span><span class="m"><span class="th-only">หมึกบนกระดาษ · 21 × 30 ซม.</span><span class="en-only">Ink on paper · 21 × 30 cm</span></span><span class="note"><span class="th-only">จากถ้วยกาแฟอุ่น ควันสองสายม้วนตัวลอยขึ้น ก่อรูปเป็นดวงจันทร์ที่ห่อหุ้มผืนทะเลไว้ข้างใน แล้วผลิบานปลายเป็นดอกกุหลาบเหนือหมู่เมฆ—ความฝันเล็ก ๆ ที่ผุดขึ้นจากสิ่งสามัญในเช้าวันหนึ่ง</span><span class="en-only">From a warm cup of coffee, two ribbons of steam curl upward, forming a moon that cradles a sea within, then blossoming into a rose above the clouds — a small dream rising from the ordinary on an ordinary morning.</span></span></figcaption>
-  </figure>
-</div>
-
-<div class="plate small"><div class="wrap"><figure>
-  <img src="images/13-couple-husky.jpg" alt="Couple">
-  <figcaption><span class="t">Couple</span><span class="m"><span class="th-only">2565 · หมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Ink on paper · 21 × 28 cm</span></span>
-  <span class="note"><span class="th-only">ภาพเหมือนสุนัขด้วยเส้นหมึกละเอียด ห้อมล้อมด้วยลายพรรณพฤกษาและสัญลักษณ์</span><span class="en-only">A portrait of dogs in fine ink line, surrounded by botanical patterns and symbols.</span></span></figcaption>
-</figure></div></div>
-
-<!-- ===== ACT V : WAKING ===== -->
-<div class="act wrap">
-  <div class="num">V</div>
-  <div class="en">Waking</div>
-  <h2 class="th-only">ลืมตาตื่น</h2>
-  <h2 class="en-only">Waking</h2>
-  <p class="concept"><span class="th-only">เมื่อใจค่อย ๆ ถูกชำระ สีสันก็กลับคืนมา ความฝันไม่ได้จางหาย แต่แปรเป็นแสง—ดอกไม้บานอยู่ในแจกัน ดวงตะวันละลายลงอย่างช้า ๆ และนาฬิกาทรายก็พร้อมจะถูกพลิกกลับอีกครั้ง นี่คือชั่วขณะก่อนการลืมตา ที่ทุกสิ่งยังพร่างพราวด้วยสีของความหวัง</span><span class="en-only">As the heart is slowly washed clear, colour returns. The dream does not fade but turns into light — flowers bloom in a vase, the sun melts slowly down, and the hourglass is ready to be turned once more. This is the moment before waking, when everything still shimmers with the colour of hope.</span></p>
-  <div class="rule"></div>
-</div>
-
-<div class="pair">
-  <figure>
-    <img src="images/16-melting-sun.jpg" alt="Melting Sun">
-    <figcaption><span class="t">Melting Sun</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">ดวงตะวันสีเหลืองหยดยาวลงมาเป็นเส้น ใจกลางภาพคือการประทุของลายเส้นนับไม่ถ้วน—ดอกไม้ ผีเสื้อ เป็ดน้อย และบ้านเห็ด ราวกับความทรงจำทั้งหมดกำลังละลายหลอมรวมเป็นหนึ่งก่อนเลือนหาย</span><span class="en-only">A yellow sun drips down in long threads; at its centre, an eruption of countless lines — flowers, butterflies, little ducks and a mushroom house — as if every memory were melting into one before it fades.</span></span></figcaption>
-  </figure>
-  <figure>
-    <img src="images/18-hourglass.jpg" alt="Hourglass">
-    <figcaption><span class="t">Hourglass</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 21 × 28 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 21 × 28 cm</span></span><span class="note"><span class="th-only">นาฬิกาทรายที่ภายในบรรจุทั้งเมือง ดอกเดซี่ บทเพลง และสรรพสัตว์ไว้ด้วยกัน เมื่อทรายไหลจนหมด มันเพียงนิ่งรอวันถูกพลิกกลับ—ภาพแทนของเวลา ความรัก และโอกาสที่หมุนเวียนได้ไม่รู้จบ</span><span class="en-only">An hourglass holding within it a whole town, daisies, songs and animals together. When the sand runs out it simply waits, still, to be turned — an image of time, love and opportunity turning endlessly.</span></span></figcaption>
-  </figure>
-</div>
-
-<div class="plate"><div class="wrap"><figure>
-  <img src="images/17-before-wake-up.jpg" alt="Before Wake Up">
-  <figcaption><span class="t">Before Wake Up</span><span class="m"><span class="th-only">2565 · สีน้ำและหมึกบนกระดาษ · 50 × 60 ซม.</span><span class="en-only">2022 · Watercolour &amp; ink on paper · 50 × 60 cm</span></span>
-  <span class="note"><span class="th-only">ดอกเยอบีราสีแดงปักอยู่ในแจกัน มีร่างสีเหลืองนั่งเฝ้าเงียบ ๆ เบื้องหลังคือหมู่บ้านบนเนินเขา—ชั่วขณะก่อนตื่น ที่สีสันของโลกจริงเริ่มไหลซึมกลับเข้ามาในความฝัน</span><span class="en-only">Red gerberas in a vase, a quiet yellow figure keeping watch, a hillside village behind — the moment before waking, as the colours of the real world begin to seep back into the dream.</span></span></figcaption>
-</figure></div></div>
-
-<!-- ===== CV ===== -->
-<section class="cv">
-  <div class="wrap">
-    <div class="label">Curriculum Vitae</div>
-    <h2>Danaya Buntasnakul</h2>
-    <div style="color:#9c958a;font-size:.95rem;"><span class="th-only">ดนย บุญทัศนกุล · เกิด 1 กันยายน 2522 · ทำงานที่กรุงเทพฯ · จิตรกร · นักวาดภาพประกอบ · นักแสดง</span><span class="en-only">ดนย บุญทัศนกุล · Born 1 September 1979 · Based in Bangkok · Painter · Illustrator · Performer</span></div>
-    <div class="grid">
-      <div>
-        <h3>Education</h3>
-        <ul>
-          <li><span class="yr"><span class="th-only">2555</span><span class="en-only">2012</span></span><b><span class="th-only">ศิลปมหาบัณฑิต (จิตรกรรม)</span><span class="en-only">M.F.A. in Painting</span></b> — <span class="th-only">มหาวิทยาลัยเชียงใหม่</span><span class="en-only">Chiang Mai University</span></li>
-          <li><span class="yr"><span class="th-only">2546</span><span class="en-only">2003</span></span><span class="th-only">ทุนระยะสั้น — L'Accademia di Belle Arti di Firenze, อิตาลี</span><span class="en-only">Short-term scholarship — Accademia di Belle Arti di Firenze, Italy</span></li>
-          <li><span class="yr"><span class="th-only">2544</span><span class="en-only">2001</span></span><b><span class="th-only">ศิลปบัณฑิต (จิตรกรรม)</span><span class="en-only">B.F.A. in Painting</span></b> — <span class="th-only">มหาวิทยาลัยศรีนครินทรวิโรฒ</span><span class="en-only">Srinakharinwirot University</span></li>
-        </ul>
-        <h3 style="margin-top:36px">Teaching</h3>
-        <ul>
-          <li><span class="yr"><span class="th-only">2564–66</span><span class="en-only">2021–23</span></span><span class="th-only">อาจารย์พิเศษ วิทยาลัยการออกแบบ ม.รังสิต</span><span class="en-only">Visiting Lecturer, College of Design, Rangsit University</span></li>
-          <li><span class="yr"><span class="th-only">2549–54</span><span class="en-only">2006–11</span></span><span class="th-only">อาจารย์ประจำ คณะศิลปกรรมศาสตร์ ม.ธุรกิจบัณฑิตย์</span><span class="en-only">Full-time Lecturer, Faculty of Fine and Applied Arts, Dhurakij Pundit University</span></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Solo Exhibitions</h3>
-        <ul>
-          <li><span class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></span><b>At The End You Must Wake Up</b> — <span class="th-only">Foxes International, Sky Bar &amp; Lounge, หัวหิน</span><span class="en-only">Foxes International, Sky Bar &amp; Lounge, Hua Hin</span></li>
-          <li><span class="yr"><span class="th-only">2565</span><span class="en-only">2022</span></span><b>I Am Home</b> — <span class="th-only">บ้านศิลปิน, หัวหิน</span><span class="en-only">Artist's House, Hua Hin</span></li>
-          <li><span class="yr"><span class="th-only">2553</span><span class="en-only">2010</span></span><span class="th-only">ไม่มีชื่อลำดับที่หนึ่ง — แจ่งเมือง Gallery, เชียงใหม่</span><span class="en-only">Untitled No. 1 — Jaeng Mueang Gallery, Chiang Mai</span></li>
-          <li><span class="yr"><span class="th-only">2552</span><span class="en-only">2009</span></span><span class="th-only">Missing Link — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span><span class="en-only">Missing Link — Pridi Banomyong Institute, Bangkok</span></li>
-          <li><span class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></span><span class="th-only">ในนามของความรัก — หอศิลป์บ้านศิลปิน, หัวหิน</span><span class="en-only">In the Name of Love — Artist's House Gallery, Hua Hin</span></li>
-          <li><span class="yr"><span class="th-only">2551</span><span class="en-only">2008</span></span><span class="th-only">ระหว่างเรา — สถาบันปรีดี พนมยงค์, กรุงเทพฯ</span><span class="en-only">Between Us — Pridi Banomyong Institute, Bangkok</span></li>
-          <li><span class="yr"><span class="th-only">2550</span><span class="en-only">2007</span></span><span class="th-only">ไม่มีชื่อลำดับที่ศูนย์ — โรงแรมอมารี วอเตอร์เกท, กรุงเทพฯ</span><span class="en-only">Untitled No. 0 — Amari Watergate Hotel, Bangkok</span></li>
-        </ul>
-      </div>
     </div>
   </div>
-</section>
+</main>
 
-<!-- ===== CONTACT ===== -->
-<section class="contact">
-  <div class="wrap">
-    <h2><span class="th-only">ติดต่อศิลปิน</span><span class="en-only">Contact the Artist</span></h2>
-    <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
-    <div class="meta">
-      <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
-      <a href="mailto:artproducktion@gmail.com">artproducktion@gmail.com</a><br>
-      <span class="th-only">กรุงเทพมหานคร ประเทศไทย</span><span class="en-only">Bangkok, Thailand</span>
-    </div>
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="who">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
+  <div class="meta">
+    <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
+    <span class="th-only">กรุงเทพมหานคร ประเทศไทย</span><span class="en-only">Bangkok, Thailand</span>
   </div>
-</section>
+</footer>
 
 <script>
   document.querySelectorAll('[data-set-lang]').forEach(function(b){

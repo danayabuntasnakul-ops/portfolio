@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="th" data-lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ดอยสุเทพและเพื่อน · Doi Suthep and Friends — ดนย บุญทัศนกุล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@300;400;500;600&family=Sarabun:wght@200;300;400;500&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2a2723; --soft:#6b655c; --faint:#9a9388;
+    --paper:#f6f2ea; --paper2:#efe9df; --line:#ddd5c7;
+    --accent:#3f6b48;
+    --serif:'Noto Serif Thai','Cormorant Garamond',serif;
+    --sans:'Sarabun',-apple-system,'Helvetica Neue',sans-serif;
+    --display:'Cormorant Garamond',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-weight:300; line-height:1.85;
+    -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+  }
+  img{display:block; max-width:100%; height:auto}
+  .wrap{max-width:1060px; margin:0 auto; padding:0 32px}
+
+  /* LANGUAGE TOGGLE */
+  [data-lang="th"] .en-only{display:none !important}
+  [data-lang="en"] .th-only{display:none !important}
+  .lang-switch{position:fixed; top:14px; right:14px; z-index:200; display:flex;
+    background:rgba(246,242,234,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid var(--line); border-radius:999px; overflow:hidden;
+    box-shadow:0 4px 16px -8px rgba(40,34,26,.4); font-family:var(--display)}
+  .lang-switch button{border:none; background:none; cursor:pointer; padding:7px 16px;
+    font-size:.82rem; letter-spacing:.06em; color:var(--soft); font-family:inherit}
+  .lang-switch button:hover{color:var(--ink)}
+  [data-lang="th"] .lang-switch [data-set-lang="th"],
+  [data-lang="en"] .lang-switch [data-set-lang="en"]{background:var(--accent); color:#fff}
+
+  /* SITE NAV */
+  .site-nav{position:fixed; top:14px; left:14px; z-index:200; display:flex; align-items:center;
+    background:rgba(246,242,234,.92); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+    border:1px solid var(--line); border-radius:999px; overflow:hidden;
+    box-shadow:0 4px 16px -8px rgba(40,34,26,.4); font-family:var(--display)}
+  .site-nav a{padding:7px 15px; font-size:.82rem; letter-spacing:.05em; color:var(--soft);
+    text-decoration:none; white-space:nowrap; transition:color .2s,background .2s}
+  .site-nav a + a{border-left:1px solid var(--line)}
+  .site-nav a:hover{color:var(--ink)}
+  .site-nav a.active{background:var(--accent); color:#fff}
+  @media print{.site-nav{display:none}}
+  @media(max-width:620px){
+    .site-nav a{padding:6px 10px; font-size:.74rem; letter-spacing:.01em}
+    .lang-switch button{padding:6px 12px}
+  }
+
+  /* COVER */
+  .cover{min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:60px 32px; position:relative}
+  .cover .kicker{font-family:var(--display); font-style:italic; font-size:1.1rem; color:var(--soft);
+    letter-spacing:.18em; text-transform:uppercase; margin-bottom:26px}
+  .cover figure{max-width:820px; width:100%; box-shadow:0 24px 60px -28px rgba(40,34,26,.55); margin-bottom:38px}
+  .cover h1{font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,6vw,4.6rem);
+    line-height:1.04; letter-spacing:.005em}
+  .cover h1 em{font-style:italic; display:block; color:var(--accent)}
+  .cover .artist{font-family:var(--serif); font-weight:400; font-size:1.25rem; margin-top:22px; letter-spacing:.04em}
+  .cover .sub{font-size:.95rem; color:var(--soft); margin-top:8px; letter-spacing:.05em}
+  .scroll-cue{position:absolute; bottom:26px; font-size:.78rem; color:var(--faint); letter-spacing:.25em; text-transform:uppercase}
+
+  /* STATEMENT */
+  section{padding:96px 0}
+  .statement{background:var(--paper2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .statement .lead{font-family:var(--serif); font-weight:300; font-size:1.5rem; line-height:1.9; max-width:760px}
+  .statement p{font-family:var(--serif); font-weight:300; font-size:1.12rem; line-height:2; max-width:720px; margin-top:1.4em; color:#3a352e}
+  .label{font-family:var(--display); font-style:italic; font-size:1rem; letter-spacing:.18em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:30px}
+
+  /* SECTION DIVIDER */
+  .act{text-align:center; padding:120px 0 64px}
+  .act .en{font-family:var(--display); font-size:.95rem; letter-spacing:.35em; text-transform:uppercase; color:var(--soft); margin:0 0 10px}
+  .act h2{font-family:var(--serif); font-weight:500; font-size:clamp(1.6rem,4vw,2.3rem); letter-spacing:.02em}
+  .act .concept{font-family:var(--serif); font-weight:300; font-size:1.08rem; line-height:2; max-width:660px;
+    margin:26px auto 0; color:#3a352e}
+  .rule{width:54px; height:1px; background:var(--accent); margin:32px auto 0}
+
+  /* PLATES */
+  .plate{padding:48px 0}
+  .plate figure{margin:0 auto; max-width:880px}
+  .plate.wide figure{max-width:1040px}
+  .plate.small figure{max-width:520px}
+  .plate img{margin:0 auto; box-shadow:0 18px 44px -26px rgba(40,34,26,.5)}
+  .pair{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; max-width:980px; margin:48px auto}
+  .pair figure{max-width:none; margin:0}
+  .pair img{box-shadow:0 18px 44px -26px rgba(40,34,26,.5)}
+  figcaption{margin-top:18px; text-align:center; font-size:.92rem; color:var(--soft); line-height:1.7}
+  figcaption .t{font-family:var(--display); font-style:italic; font-size:1.2rem; color:var(--ink); letter-spacing:.01em}
+  figcaption .m{display:block; margin-top:4px; font-size:.84rem; color:var(--faint); letter-spacing:.02em}
+  figcaption .d{display:block; margin:12px auto 0; max-width:480px; font-family:var(--serif); font-weight:300;
+    font-size:.96rem; line-height:1.78; color:#4a443c; letter-spacing:.005em}
+  .plate.wide figcaption .d{max-width:620px}
+  .cover figcaption{margin-top:16px}
+  .cover figcaption .d{max-width:560px}
+
+  /* CLOSING */
+  .closing{text-align:center; background:var(--paper2); border-top:1px solid var(--line)}
+  .closing h2{font-family:var(--display); font-style:italic; font-size:2rem; margin-bottom:18px}
+  .closing p{font-family:var(--serif); font-weight:300; font-size:1.08rem; color:#3a352e; max-width:600px; margin:0 auto 26px}
+  .closing a{color:var(--accent); text-decoration:none; border-bottom:1px solid var(--line)}
+
+  @media(max-width:720px){
+    .wrap{padding:0 22px}
+    section{padding:64px 0}
+    .act{padding:80px 0 48px}
+    .pair{grid-template-columns:1fr; gap:40px}
+    .statement .lead{font-size:1.3rem}
+  }
+  @media print{
+    body{background:#fff}
+    .lang-switch,.scroll-cue{display:none}
+    section,.act,.plate{padding:24px 0; page-break-inside:avoid}
+    .cover{min-height:auto; page-break-after:always}
+    .plate img,.cover figure,.pair img{box-shadow:none}
+    .statement,.closing{background:#fff}
+  }
+</style>
+<script>(function(){try{var l=localStorage.getItem('portfolioLang');if(l){document.documentElement.setAttribute('data-lang',l);document.documentElement.setAttribute('lang',l);}}catch(e){}})();</script>
+</head>
+<body>
+
+<!-- SITE NAV -->
+<nav class="site-nav" aria-label="ไปยังหน้าอื่น">
+  <a href="index.html" class="active" aria-current="page"><span class="th-only">นิทรรศการ</span><span class="en-only">Exhibition</span></a>
+  <a href="shop.html"><span class="th-only">ต้นฉบับ</span><span class="en-only">Originals</span></a>
+  <a href="cv.html"><span class="th-only">ประวัติ</span><span class="en-only">CV</span></a>
+</nav>
+
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch" role="group" aria-label="Language">
+  <button type="button" data-set-lang="th">ไทย</button>
+  <button type="button" data-set-lang="en">EN</button>
+</div>
+
+<!-- ===== COVER ===== -->
+<header class="cover">
+  <div class="kicker"><span class="th-only">ชุดผลงานวิทยานิพนธ์ · จิตรกรรมนามธรรม</span><span class="en-only">Thesis Series · Abstract Painting</span></div>
+  <figure><img src="images/doi/doi-01.jpg" alt="Untitled No. 8"><figcaption><span class="t">Untitled No. 8</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">ภาพเปิดของชุดผลงาน — รูปทรงอันกว้างใหญ่ของดอยค่อย ๆ ก่อตัวขึ้นจากชั้นสีน้ำมันที่ซ้อนทับ ความลดหลั่นของยอดเขาและแสงที่เคลื่อนผ่าน</span><span class="en-only">The opening work — the mountain's vast form emerging from layered oil, its cascading ridgelines and the passage of light.</span></span></figcaption></figure>
+  <h1><span class="th-only">ดอยสุเทพ<em>และเพื่อน</em></span><span class="en-only">Doi Suthep<em>and Friends</em></span></h1>
+  <div class="artist">ดนย บุญทัศนกุล · Danaya Buntasnakul</div>
+  <div class="sub"><span class="th-only">สีน้ำมันและสีอะคริลิคบนผ้าใบ</span><span class="en-only">Oil and acrylic on canvas</span></div>
+  <div class="scroll-cue"><span class="th-only">เลื่อนลง</span><span class="en-only">Scroll</span></div>
+</header>
+
+<!-- ===== STATEMENT ===== -->
+<section class="statement">
+  <div class="wrap">
+    <div class="label">Background &amp; Inspiration<span class="th-only"> · ที่มาและแรงบันดาลใจ</span></div>
+    <p class="lead"><span class="th-only">ข้าพเจ้าเกิดและเติบโตในกรุงเทพมหานคร เมืองที่เต็มไปด้วยการแข่งขันกับเวลา ความเร่งรีบ ตึกอาคาร ผู้คน และรถยนต์ เมื่อมีโอกาสได้ตามบิดามารดาไปเที่ยวต่างจังหวัด ข้าพเจ้าจึงได้สัมผัสต้นไม้ ดอกไม้ สนามหญ้า และสัตว์น้อยใหญ่ ซึ่งล้วนเป็นสิ่งที่ไม่อาจพบเห็นได้ในชีวิตประจำวัน</span><span class="en-only">I was born and raised in Bangkok, a city defined by its race against time — a place of haste, towering buildings, crowds, and traffic. Whenever my parents took me to the provinces, I encountered trees, flowers, open fields, and small creatures — things I could never see in daily city life.</span></p>
+    <p><span class="th-only">เมื่อได้มาศึกษาต่อที่เชียงใหม่ ข้าพเจ้าค้นพบสิ่งใหม่ที่กรุงเทพฯ ไม่มี นั่นคือ “ภูเขา” ซึ่งสำหรับข้าพเจ้าคือสัญลักษณ์อันยิ่งใหญ่ของธรรมชาติ โดยเฉพาะดอยสุเทพที่มองเห็นเด่นชัดจากทั่วเมือง เนื่องจากข้าพเจ้าเช่าบ้านพักอยู่ตีนดอยสุเทพ จึงได้เห็นดอยทุกวันในทุกช่วงเวลาและทุกสภาพอากาศ ทั้งกลางวัน ยามโพล้เพล้ วันที่หมอกลง หรือวันที่เมฆฝนบดบังยอดดอย รูปลักษณ์อันกว้างใหญ่ ความลดหลั่นของยอดเขา แสงที่ตกกระทบ และเมฆที่เคลื่อนผ่าน ล้วนสร้างความประทับใจให้ข้าพเจ้าอย่างไม่รู้เบื่อ</span><span class="en-only">When I came to study in Chiang Mai, I discovered something Bangkok did not have: the mountains — a powerful symbol of nature, and Doi Suthep in particular stands prominently in view from across the city. Because I rent a house at the foot of Doi Suthep, I see the mountain every day, in every light and every kind of weather — in daylight, at dusk, on misty mornings, and on days when rain clouds veil its peak. Its vast form, the cascading ridgelines, the play of light, and the drifting clouds never cease to move me.</span></p>
+    <p><span class="th-only">ความประทับใจเหล่านี้เองที่ข้าพเจ้าต้องการถ่ายทอดออกมา ทั้งอารมณ์ ความรู้สึก และจินตนาการที่มีต่อความงามอันซ่อนอยู่ในความเปลี่ยนแปลงของสี แสง และบรรยากาศ ผ่านผลงานจิตรกรรมนามธรรม โดยเลือกใช้สีน้ำมันและสีอะคริลิควาดลงบนผ้าใบ เพราะสีอะคริลิคให้ความโปร่งแสงคล้ายสีน้ำเมื่อผสมเจือจาง ขณะที่สีน้ำมันมีเนื้อหนาแน่น สร้างมิติและทิ้งรอยฝีแปรงได้ดี การนำสองสิ่งมาใช้ร่วมกันจึงช่วยสร้างบรรยากาศของภูมิทัศน์ที่หลากหลาย</span><span class="en-only">It is precisely these impressions that I wish to convey — the emotion, feeling, and imagination I hold toward the beauty hidden within the ever-shifting colour, light, and atmosphere — expressed through abstract painting. I work with both oil and acrylic on canvas: acrylic, when thinned, becomes translucent like watercolour, while oil is dense in body, capable of building depth and leaving expressive brushstrokes. Combining the two allows me to create varied landscapes and atmospheres.</span></p>
+    <p><span class="th-only">สำหรับข้าพเจ้า ธรรมชาติคือครูผู้ยิ่งใหญ่ที่สอนให้เห็นสัจธรรมแห่งความไม่แน่นอนและการเปลี่ยนแปลง ข้าพเจ้าไม่ได้สร้างงานเพียงเพื่อบันทึกความงาม แต่สร้างเพราะ “กลัว” ว่าความงามที่พบเห็นและประทับใจจะเลือนหายไป และอาจไม่ได้เห็นทิวทัศน์เช่นนี้อีก</span><span class="en-only">For me, nature is the greatest teacher, revealing the truth of impermanence and constant change. I do not create merely to record beauty, but out of a fear that the beauty I have witnessed and cherished might fade and disappear — that I may never see such scenery again.</span></p>
+  </div>
+</section>
+
+<!-- ===== PART I ===== -->
+<div class="act wrap">
+  <div class="en">Part I</div>
+  <h2 class="th-only">ความประทับใจต่อสีสันของธรรมชาติ</h2>
+  <h2 class="en-only">Impressions of Nature's Colour</h2>
+  <p class="concept"><span class="th-only">ช่วงแรกของชุดผลงาน ถ่ายทอดความประทับใจต่อสีสันของธรรมชาติที่พบเห็น — ทิวเขา แมกไม้ แสง และบรรยากาศของดอยสุเทพในแต่ละช่วงเวลาและสภาพอากาศ</span><span class="en-only">The first phase conveys my impression of the colours found in nature — the ridgelines, the trees, the light, and the atmosphere of Doi Suthep across different times and weather.</span></p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure><img src="images/doi/doi-02.jpg" alt="Untitled No. 1"><figcaption><span class="t">Untitled No. 1</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 160 × 140 ซม.</span><span class="en-only">2011 · Oil on canvas · 160 × 140 cm</span></span><span class="d"><span class="th-only">ความประทับใจแรกต่อสีสันของดอยสุเทพ ฝีแปรงสีน้ำมันซ้อนทับกันเป็นมวลของแสงและเงา</span><span class="en-only">A first impression of Doi Suthep's colour — oil brushstrokes layered into masses of light and shadow.</span></span></figcaption></figure></div></div>
+
+<div class="pair">
+  <figure><img src="images/doi/doi-03.jpg" alt="Untitled No. 5"><figcaption><span class="t">Untitled No. 5</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">ผืนผ้าใบขนาดใหญ่ที่เปิดให้สายตาจมลงในระยะอันไกลโพ้นของทิวเขาและท้องฟ้า</span><span class="en-only">A large canvas that lets the eye sink into the far distance of ridgeline and sky.</span></span></figcaption></figure>
+  <figure><img src="images/doi/doi-04.jpg" alt="Untitled No. 3"><figcaption><span class="t">Untitled No. 3</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">ทิวเขาที่ละลายเข้าหากันด้วยสี ไร้เส้นขอบอันชัดเจน เหลือไว้เพียงบรรยากาศ</span><span class="en-only">Ridgelines dissolving into one another through colour — no firm outline, only atmosphere.</span></span></figcaption></figure>
+</div>
+
+<div class="pair">
+  <figure><img src="images/doi/doi-05.jpg" alt="Untitled No. 6"><figcaption><span class="t">Untitled No. 6</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 160 × 140 ซม.</span><span class="en-only">2011 · Oil on canvas · 160 × 140 cm</span></span><span class="d"><span class="th-only">แสงในช่วงเวลาหนึ่งของวันที่ตกกระทบผิวดอย บันทึกไว้ก่อนจะเลือนหายไป</span><span class="en-only">The light of a single hour falling on the mountain, set down before it fades.</span></span></figcaption></figure>
+  <figure><img src="images/doi/doi-06.jpg" alt="Autumn"><figcaption><span class="t">Autumn</span><span class="m"><span class="th-only">2553 · สีน้ำมันบนผ้าใบ · 100 × 80 ซม.</span><span class="en-only">2010 · Oil on canvas · 100 × 80 cm</span></span><span class="d"><span class="th-only">สีของฤดูที่ผลัดเปลี่ยน อบอุ่นและกำลังจะจากไป ดั่งคำสอนเรื่องความไม่จีรัง</span><span class="en-only">The colours of a turning season — warm, and already departing — a lesson in impermanence.</span></span></figcaption></figure>
+</div>
+
+<div class="pair">
+  <figure><img src="images/doi/doi-07.jpg" alt="Untitled No. 7"><figcaption><span class="t">Untitled No. 7</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">ความกว้างใหญ่ของธรรมชาติที่ย่อลงในผืนผ้าใบ ทั้งหนักแน่นและเคลื่อนไหวไปพร้อมกัน</span><span class="en-only">Nature's vastness condensed onto canvas — at once dense and in motion.</span></span></figcaption></figure>
+  <figure><img src="images/doi/doi-08.jpg" alt="Before Sunset"><figcaption><span class="t">Before Sunset</span><span class="m"><span class="th-only">2553 · สีน้ำมันบนผ้าใบ · 100 × 140 ซม.</span><span class="en-only">2010 · Oil on canvas · 100 × 140 cm</span></span><span class="d"><span class="th-only">ช่วงเวลาก่อนตะวันลับยอดดอย เมื่อแสงสุดท้ายระบายท้องฟ้าให้อบอุ่น</span><span class="en-only">The moment before the sun slips behind the peak, the last light warming the sky.</span></span></figcaption></figure>
+</div>
+
+<div class="plate small"><div class="wrap"><figure><img src="images/doi/doi-09.jpg" alt="Pink Cloud"><figcaption><span class="t">Pink Cloud</span><span class="m"><span class="th-only">2553 · สีน้ำมันบนผ้าใบ · 100 × 140 ซม.</span><span class="en-only">2010 · Oil on canvas · 100 × 140 cm</span></span><span class="d"><span class="th-only">เมฆสีชมพูที่เคลื่อนผ่านยอดดอย ความงามชั่วขณะที่ศิลปินกลัวว่าจะไม่ได้เห็นอีก</span><span class="en-only">A pink cloud drifting past the peak — a fleeting beauty the artist feared never to see again.</span></span></figcaption></figure></div></div>
+
+<div class="plate wide"><div class="wrap"><figure><img src="images/doi/doi-10.jpg" alt="Untitled No. 2"><figcaption><span class="t">Untitled No. 2</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 340 × 160 ซม. (ภาพคู่)</span><span class="en-only">2011 · Oil on canvas · 340 × 160 cm (diptych)</span></span><span class="d"><span class="th-only">ภาพคู่ที่ทอดความกว้างของภูมิทัศน์ออกไปสุดสายตา ทิวเขาต่อเนื่องกันไม่ขาดตอน</span><span class="en-only">A diptych stretching the landscape to the horizon — an unbroken sweep of ridgeline.</span></span></figcaption></figure></div></div>
+
+<div class="plate wide"><div class="wrap"><figure><img src="images/doi/doi-11.jpg" alt="Bye Bye Summer Time"><figcaption><span class="t">Bye Bye Summer Time</span><span class="m"><span class="th-only">2554 · สีอะคริลิคบนผ้าใบ · 200 × 120 ซม. (ภาพคู่)</span><span class="en-only">2011 · Acrylic on canvas · 200 × 120 cm (diptych)</span></span><span class="d"><span class="th-only">อำลาฤดูร้อน สีอะคริลิคเจือจางจนโปร่งแสงดั่งสีน้ำ บอกลาช่วงเวลาที่ผ่านพ้นไป</span><span class="en-only">A farewell to summer — acrylic thinned to a watercolour translucence, bidding a season goodbye.</span></span></figcaption></figure></div></div>
+
+<!-- ===== PART II ===== -->
+<div class="act wrap">
+  <div class="en">Part II</div>
+  <h2 class="th-only">จากส่วนลึกของจิตใจ</h2>
+  <h2 class="en-only">From the Depths of the Heart</h2>
+  <p class="concept"><span class="th-only">ช่วงที่สอง สร้างสรรค์หลังไตร่ตรองความต้องการที่แท้จริงจากส่วนลึกของจิตใจ โดยใช้บรรยากาศและทิวทัศน์ธรรมชาติเป็นสื่อแทนการแสดงออก ผ่านสีสันและฝีแปรงที่สร้างความเคลื่อนไหวและบรรยากาศอันกว้างใหญ่</span><span class="en-only">The second phase was created after deeper reflection on my true inner needs, using natural scenery and atmosphere as a medium of expression — through colour and brushwork that evoke movement and a sense of vastness.</span></p>
+  <div class="rule"></div>
+</div>
+
+<div class="plate"><div class="wrap"><figure><img src="images/doi/doi-12.jpg" alt="Into the Woods"><figcaption><span class="t">Into the Woods</span><span class="m"><span class="th-only">2554 · สีอะคริลิคบนผ้าใบ · 120 × 100 ซม.</span><span class="en-only">2011 · Acrylic on canvas · 120 × 100 cm</span></span><span class="d"><span class="th-only">ก้าวเข้าสู่ส่วนลึกของพงไพรและของจิตใจ ที่ซึ่งธรรมชาติกลายเป็นสื่อแทนความรู้สึก</span><span class="en-only">A step into the depths of the woods — and of the heart — where nature becomes a medium of feeling.</span></span></figcaption></figure></div></div>
+
+<div class="pair">
+  <figure><img src="images/doi/doi-13.jpg" alt="Untitled No. 9"><figcaption><span class="t">Untitled No. 9</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">อารมณ์จากภายในที่ถ่ายทอดผ่านสีและฝีแปรง มากกว่าการบันทึกภาพที่ตาเห็น</span><span class="en-only">Inner emotion conveyed through colour and brushwork, beyond what the eye records.</span></span></figcaption></figure>
+  <figure><img src="images/doi/doi-14.jpg" alt="Untitled No. 4"><figcaption><span class="t">Untitled No. 4</span><span class="m"><span class="th-only">2554 · สีน้ำมันบนผ้าใบ · 230 × 190 ซม.</span><span class="en-only">2011 · Oil on canvas · 230 × 190 cm</span></span><span class="d"><span class="th-only">ทิวทัศน์ที่กลายเป็นนามธรรมเกือบทั้งหมด เหลือไว้เพียงความเคลื่อนไหวของสี</span><span class="en-only">A landscape turned almost wholly abstract, leaving only the movement of colour.</span></span></figcaption></figure>
+</div>
+
+<div class="plate"><div class="wrap"><figure><img src="images/doi/doi-16.jpg" alt="Pastel Party"><figcaption><span class="t">Pastel Party</span><span class="m"><span class="th-only">2553 · สีน้ำมันบนผ้าใบ · 160 × 100 ซม.</span><span class="en-only">2010 · Oil on canvas · 160 × 100 cm</span></span><span class="d"><span class="th-only">งานรื่นเริงของสีพาสเทล แสงและบรรยากาศอันเบาสบายของธรรมชาติในยามผ่อนคลาย</span><span class="en-only">A celebration of pastel hues — the light, easy atmosphere of nature at its gentlest.</span></span></figcaption></figure></div></div>
+
+<div class="pair">
+  <figure><img src="images/doi/doi-17.jpg" alt="Steps No. 1"><figcaption><span class="t">Steps No. 1</span><span class="m"><span class="th-only">2554 · สีอะคริลิคบนผ้าใบ · 160 × 140 ซม.</span><span class="en-only">2011 · Acrylic on canvas · 160 × 140 cm</span></span><span class="d"><span class="th-only">ก้าวแรกของชุดสามภาพ จังหวะของสีและฝีแปรงที่ค่อย ๆ พาเข้าสู่ความกว้างใหญ่</span><span class="en-only">The first of a three-part progression — rhythms of colour and brush leading toward vastness.</span></span></figcaption></figure>
+  <figure><img src="images/doi/doi-18.jpg" alt="Steps No. 2"><figcaption><span class="t">Steps No. 2</span><span class="m"><span class="th-only">2554 · สีอะคริลิคบนผ้าใบ · 160 × 140 ซม.</span><span class="en-only">2011 · Acrylic on canvas · 160 × 140 cm</span></span><span class="d"><span class="th-only">ก้าวที่สอง บรรยากาศที่เปิดกว้างขึ้น สีอะคริลิคไหลเลื่อนอย่างอิสระ</span><span class="en-only">The second step — the atmosphere opens further as acrylic flows freely.</span></span></figcaption></figure>
+</div>
+
+<div class="plate"><div class="wrap"><figure><img src="images/doi/doi-19.jpg" alt="Steps No. 3"><figcaption><span class="t">Steps No. 3</span><span class="m"><span class="th-only">2554 · สีอะคริลิคบนผ้าใบ · 160 × 140 ซม.</span><span class="en-only">2011 · Acrylic on canvas · 160 × 140 cm</span></span><span class="d"><span class="th-only">ก้าวสุดท้าย เมื่อทิวทัศน์และความรู้สึกหลอมรวมเข้าเป็นหนึ่งเดียว</span><span class="en-only">The final step — where landscape and feeling merge into one.</span></span></figcaption></figure></div></div>
+
+<!-- ===== CLOSING ===== -->
+<section class="closing">
+  <div class="wrap">
+    <h2><span class="th-only">ติดต่อศิลปิน</span><span class="en-only">Contact the Artist</span></h2>
+    <p><span class="th-only">ผลงานชุด “ดอยสุเทพและเพื่อน” สอบถามรายละเอียดผลงานแต่ละชิ้นได้โดยตรง</span><span class="en-only">For details on individual works from the “Doi Suthep and Friends” series, please get in touch.</span></p>
+    <div>
+      <a href="mailto:dan.pittore@icloud.com">dan.pittore@icloud.com</a><br>
+      <a href="mailto:artproducktion@gmail.com">artproducktion@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-set-lang]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var l = b.getAttribute('data-set-lang');
+      document.documentElement.setAttribute('data-lang', l);
+      document.documentElement.setAttribute('lang', l);
+      try{ localStorage.setItem('portfolioLang', l); }catch(e){}
+    });
+  });
+</script>
+
+</body>
+</html>

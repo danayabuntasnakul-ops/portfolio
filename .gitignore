@@ -3,3 +3,6 @@
 CAT/
 digital painting/
 dropbox/
+
+# Netlify local state
+.netlify/
